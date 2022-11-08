@@ -6,8 +6,11 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: roboto, sans-serif;
+}
+
 .nav{
-    background-color: blue;
     display: flex;
     justify-content: space-between;
     align-items: center;
