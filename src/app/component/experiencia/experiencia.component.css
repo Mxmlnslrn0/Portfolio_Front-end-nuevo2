@@ -1,0 +1,17 @@
+.xprnc{
+    background-color: #0586d8;
+    display: flex;
+    justify-content:space-evenly;
+    height: 70vh;
+}
+
+.xprnc h1{
+    font-size: 40px;
+    color: #fff;
+    margin-top: 25px;
+}
+
+.xprnc li{
+    color:#fff;
+    margin: 20px;
+}

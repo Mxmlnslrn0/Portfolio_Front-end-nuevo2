@@ -1,6 +1,12 @@
 <div class="xprnc">
     <h1>Experiencia</h1>
-    <div class="xprnc-cards">
-        
+    <div class="xprnc-cards" style="align-self:center;">
+        <ul *ngFor="let trabajos of trabajo">
+            <li>Empleo: {{trabajos.empleo}}
+                <div>Puesto: {{trabajos.puesto}}</div>
+                <div>Periodo: {{trabajos.periodo}}</div>
+                <div>Descripción: {{trabajos.descripcion}}</div>
+            </li>
+        </ul>
     </div>
 </div>
