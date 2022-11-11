@@ -1,0 +1,38 @@
+.educa{
+    background-color:#0586d8;
+    display: flex;
+    justify-content:space-evenly;
+    height: 90vh;
+}
+
+
+.educación-cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.educación-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.educación-imag img{
+    width: 100px;
+    float: left;
+    margin-right: 25px;
+}
+
+.educa h1{
+    font-size: 50px;
+    color: white;
+    margin-top: 100px;
+}
+
+.educa li{
+    list-style: none;
+    text-align: left;
+    color: white;
+    margin: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

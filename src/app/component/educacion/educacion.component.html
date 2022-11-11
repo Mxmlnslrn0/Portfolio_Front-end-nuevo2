@@ -1,0 +1,18 @@
+<div class="educa">
+    <h1>Educación</h1>
+    <div class="educación-cards" style="align-self:center;">
+        <ul *ngFor="let estudio of estudios">
+            <li>
+                <div class="educación-imag">
+                    <img [src]=estudio.imagen/>
+                </div>
+                <div class="educación-flex">
+                     Nombre: {{estudio.establecimiento}}
+                <div>Carrera: {{estudio.carrera}}</div>
+                <div>Periodo: {{estudio.periodo}}</div>
+                <div>Descripción: {{estudio.descripcion}}</div>  
+                </div>    
+            </li>
+        </ul>
+    </div>
+</div>

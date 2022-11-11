@@ -6,6 +6,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { ImagenComponent } from './component/imagen/imagen.component';
 import { AcercaDeComponent } from './component/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './component/experiencia/experiencia.component';
+import { EducacionComponent } from './component/educacion/educacion.component';
 
 
 
@@ -17,6 +18,7 @@ import { ExperienciaComponent } from './component/experiencia/experiencia.compon
     ImagenComponent,
     AcercaDeComponent,
     ExperienciaComponent,
+    EducacionComponent,
   
     
     
