@@ -1,17 +1,38 @@
 .xprnc{
-    background-color: #0586d8;
+    background-color:whitesmoke;
     display: flex;
     justify-content:space-evenly;
-    height: 70vh;
+    height: 90vh;
+}
+
+
+.xprnc-cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.xprnc-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.imag img{
+    width: 100px;
+    float: left;
+    margin-right: 25px;
 }
 
 .xprnc h1{
-    font-size: 40px;
-    color: #fff;
-    margin-top: 25px;
+    font-size: 50px;
+    color: #0586d8;
+    margin-top: 100px;
 }
 
 .xprnc li{
-    color:#fff;
+    list-style: none;
+    text-align: left;
+    color:#0586d8;
     margin: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
