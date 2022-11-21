@@ -5,8 +5,8 @@
 }
 
 .btn{
-    background-color: #f9004d;
-    color: white;
+    background-color: whitesmoke;
+    color: #0586d8;
     text-decoration: none;
     border: 2px solid transparent;
     font-size: 16px;
@@ -19,7 +19,7 @@
 
 .btn:hover{
     transform: scale(1.2);
-    color: white;}
+    color: #0586d8;}
 
 .social{
     display: flex;

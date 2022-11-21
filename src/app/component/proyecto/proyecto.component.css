@@ -1,0 +1,51 @@
+.proyecto-container{
+    background-color:#0586d8;
+    display: flex;
+    justify-content:space-evenly;
+    height: 100vh;
+}
+
+.list-container{
+    display: flex;
+    align-items: center;
+}
+
+.proyecto-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-container h1{
+    font-size: 50px;
+    color: white;
+    margin-top: 100px;
+}
+
+.proyecto-list li{
+    list-style: none;
+    text-align: left;
+    color: white;
+    margin: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btns{
+    margin: 15px;
+    padding: 8px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-color:whitesmoke;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.btns:hover{
+    transform: scale(1.2);
+}
+
+.btns a{
+    color:#0586d8;
+    font-weight: bold;
+    text-decoration: none;
+}
