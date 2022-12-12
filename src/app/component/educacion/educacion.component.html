@@ -1,7 +1,7 @@
 <div class="educa">
     <h1>Educación</h1>
     <div class="educación-cards" style="align-self:center;">
-        <ul *ngFor="let estudio of estudios">
+        <ul *ngFor="let estudio of educacionList">
             <li>
                 <div class="educación-imag">
                     <img [src]=estudio.imagen/>
@@ -10,7 +10,7 @@
                      Nombre: {{estudio.establecimiento}}
                 <div>Carrera: {{estudio.carrera}}</div>
                 <div>Periodo: {{estudio.periodo}}</div>
-                <div>Descripción: {{estudio.descripcion}}</div>  
+                <div>Descripción: {{estudio.desEstab}}</div>  
                 </div>    
             </li>
         </ul>

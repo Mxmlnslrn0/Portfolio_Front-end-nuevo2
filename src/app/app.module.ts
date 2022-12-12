@@ -9,6 +9,7 @@ import { ExperienciaComponent } from './component/experiencia/experiencia.compon
 import { EducacionComponent } from './component/educacion/educacion.component';
 import { HabilidadesComponent } from './component/habilidades/habilidades.component';
 import { ProyectoComponent } from './component/proyecto/proyecto.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -23,13 +24,13 @@ import { ProyectoComponent } from './component/proyecto/proyecto.component';
     EducacionComponent,
     HabilidadesComponent,
     ProyectoComponent,
-  
-    
-    
+
+
+
     
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

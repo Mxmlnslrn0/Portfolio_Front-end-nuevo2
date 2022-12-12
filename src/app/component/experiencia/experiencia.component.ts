@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -6,28 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-
-  trabajo = [{
-    empleo: 'Nombre del empleo',
-    descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, laboriosam.',
-    puesto: 'puesto',
-    periodo: '00/00/0000 - 00/00/0000',
-    imagen: 'assets/images/empresa1.png'},
-    {
-    empleo: 'Nombre del empleo 2',
-    descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, laboriosam 2.',
-    puesto: 'puesto 2',
-    periodo: '00/00/0000 - 00/00/0000 2',
-    imagen: 'assets/images/empresa2.jpeg'},
-    {
-      empleo: 'Nombre del empleo 3',
-    descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, laboriosam 3.',
-    puesto: 'puesto 3',
-    periodo: '00/00/0000 - 00/00/0000 3',
-    imagen: 'assets/images/empresa3.png'},]
-  constructor() { }
+experienciaList:any;
+  
+  constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
+    this.datosPortfolio.obtenerDatos().subscribe(data=>{
+      this.experienciaList=data.job;
+    })
   }
 
 }
