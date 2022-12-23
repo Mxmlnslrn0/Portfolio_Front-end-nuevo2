@@ -9,10 +9,12 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class HeaderComponent implements OnInit {
   title:string = 'portfolio-maxi';
   myPortfolio:any;
+
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
     
   }
+
 
 }
