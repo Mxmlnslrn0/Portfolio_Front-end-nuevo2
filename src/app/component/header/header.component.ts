@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+
 
 @Component({
   selector: 'app-header',
@@ -9,12 +9,10 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class HeaderComponent implements OnInit {
   title:string = 'portfolio-maxi';
   myPortfolio:any;
-
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor() { }
 
   ngOnInit(): void {
     
   }
-
 
 }

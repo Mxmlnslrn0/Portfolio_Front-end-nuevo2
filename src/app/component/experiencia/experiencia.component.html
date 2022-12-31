@@ -1,16 +1,16 @@
 <div class="xprnc">
     <h1>Experiencia</h1>
     <div class="xprnc-cards" style="align-self:center;">
-        <ul *ngFor="let trabajos of experienciaList">
+        <ul *ngFor="let trabajos of experiencia">
             <li>
                 <div class="imag">
-                    <img [src]=trabajos.imagen/>
+                    <img/>
                 </div>
                 <div class="xprnc-flex">
-                     Empleo: {{trabajos.empleo}}
-                <div>Puesto: {{trabajos.puesto}}</div>
-                <div>Periodo: {{trabajos.periodo}}</div>
-                <div>Descripción: {{trabajos.desTrab}}</div>  
+                     Empleo: {{trabajos.empleoExp}}
+                <div>Puesto: {{trabajos.puestoExp}}</div>
+                <div>Periodo: </div>
+                <div>Descripción: {{trabajos.descripExp}}</div>  
                 </div>    
             </li>
         </ul>
