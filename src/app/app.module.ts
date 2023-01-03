@@ -9,8 +9,13 @@ import { ExperienciaComponent } from './component/experiencia/experiencia.compon
 import { EducacionComponent } from './component/educacion/educacion.component';
 import { HabilidadesComponent } from './component/habilidades/habilidades.component';
 import { ProyectoComponent } from './component/proyecto/proyecto.component';
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AcercadMComponent } from './modal/acercad-m/acercad-m.component';
+
+
+
 
 
 
@@ -25,6 +30,11 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     HabilidadesComponent,
     ProyectoComponent,
+    AcercadMComponent,
+   
+  
+  
+    
   
 
 
@@ -34,7 +44,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule, 
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+  
     
     
   ],
