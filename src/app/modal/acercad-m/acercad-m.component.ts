@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { usuario } from 'src/app/models/acerca-de.model';
 import { AcercaDeService } from 'src/app/service/acerca-de.service';
 
@@ -14,7 +15,7 @@ export class AcercadMComponent implements OnInit {
   nombreUsu: String = '';
   oficioUsu: String ='';
   descripUsu: String='';
-  constructor(private acercaDeService : AcercaDeService) {
+  constructor(private acercaDeService : AcercaDeService, private router: Router) {
    }
 
   ngOnInit(): void {
@@ -25,10 +26,10 @@ export class AcercadMComponent implements OnInit {
       this.acercaDeService.guardar(Usuario).subscribe(
         data=>{
           alert("Usuario añadido");
-          //this.router.navigate(['']);
+          this.router.navigate(['']);
         }, err =>{
           alert("Falló");
-          //this.router.navigate(['']);
+          this.router.navigate(['']);
         }
       )
     }

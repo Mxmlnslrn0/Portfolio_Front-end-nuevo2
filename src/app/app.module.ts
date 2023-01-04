@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AcercadMComponent } from './modal/acercad-m/acercad-m.component';
+import { LoginComponent } from './modal/login/login.component';
 
 
 
@@ -31,6 +32,7 @@ import { AcercadMComponent } from './modal/acercad-m/acercad-m.component';
     HabilidadesComponent,
     ProyectoComponent,
     AcercadMComponent,
+    LoginComponent,
    
   
   

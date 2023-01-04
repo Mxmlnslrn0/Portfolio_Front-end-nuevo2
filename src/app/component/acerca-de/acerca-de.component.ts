@@ -17,7 +17,7 @@ miPortfolio:any;
 usuario : usuario = new usuario("", "", "");
 usuario2: usuario[] = [];
   
-  constructor(public acercaDeService: AcercaDeService, public router:Router) { }
+  constructor(public acercaDeService: AcercaDeService) { }
 
   ngOnInit(): void {
     this.acercaDeService.getUsuario().subscribe(data =>{this.usuario = data})

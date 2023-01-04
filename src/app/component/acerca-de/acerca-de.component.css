@@ -9,6 +9,25 @@
     
 }
 
+.boton{
+    position: absolute;
+    right: 4%;
+    top: 10%;
+    border: 2px solid #fff;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.boton:hover{
+    background-color:rgb(220, 220, 220);
+    border: 2px solid rgb(220, 220, 220);
+}
+
+.btn{
+    font-weight: bold;
+    color:#036fba
+}
+
 .ackd-foto{
     background-image: url(src/assets/images/perro1.jpg);
     background-size: cover ;

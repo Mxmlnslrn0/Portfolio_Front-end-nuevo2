@@ -24,14 +24,11 @@
     justify-content:space-around;
     align-items: center;
     background-color:#fff;
-    border-radius: 4px 4px 0 0;
+    border-radius: 20px 20px 0 0;
 }
-
-
-
 
 .contenido{
     padding: 32px;
     background: #fff;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 20px 20px;
 }
