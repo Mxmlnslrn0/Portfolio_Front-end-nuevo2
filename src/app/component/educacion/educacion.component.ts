@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { educacion } from 'src/app/models/educacion.model';
+import { Educacion } from 'src/app/models/educacion.model';
 import { EducacionService } from 'src/app/service/educacion.service';
 
 
@@ -9,13 +9,26 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-educacionList:any;
-educacion: educacion[] = [];
+
+educacion: Educacion[]=[];
 
   constructor(private educacionService:EducacionService) { }
 
   ngOnInit(): void {
-    this.educacionService.lista().subscribe(data =>{this.educacion = data;})
+    this.cargarEducacion();
   }
 
+ cargarEducacion(): void{
+    this.educacionService.lista().subscribe(data => { this.educacion=data});
+  }
+
+  borrarEdu(id:number): void{
+    if(id != undefined){
+      this.educacionService.eliminar(id).subscribe(
+        data =>{
+          this.cargarEducacion();
+        }, err =>{
+          alert("No se pudo eliminar")
+        })
+    }}
 }

@@ -1,16 +1,25 @@
 <div class="educa">
     <h1>Educación</h1>
+    <div class="boton">
+        <button type="button" class="btn" routerLink="educacion">
+            +
+          </button>
+    </div>
     <div class="educación-cards" style="align-self:center;">
-        <ul *ngFor="let estudio of educacion">
+        <ul *ngFor="let educaciones of educacion">
             <li>
                 <div class="educación-imag">
                     <img/>
                 </div>
                 <div class="educación-flex">
-                     Nombre: {{estudio.nombreEdu}}
-                <div>Carrera: {{estudio.carreraEdu}}</div>
+                     Nombre: {{educaciones.nombreEdu}} 
+                <div>Carrera: {{educaciones.carreraEdu}}</div>
                 <div>Periodo: </div>
-                <div>Descripción: {{estudio.descripEdu}} </div>  
+                <div>Descripción: {{educaciones.descripEdu}}</div>
+                <div>
+                    <button routerLink="editEduc/{{educaciones.idEdu}}">edit</button>
+                    <button (click)="borrarEdu(educaciones.idEdu)">elim</button>  
+                </div>
                 </div>    
             </li>
         </ul>
