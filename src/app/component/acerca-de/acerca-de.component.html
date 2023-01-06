@@ -1,18 +1,12 @@
 <div class="ackd">
-    <div class="boton">
-<button type="button" class="btn" (click)="modal.mostrarModal()">
-    Editar usuario
-  </button>
-<!--modal-->
-  <app-acercad-m #modal></app-acercad-m>
-
-    </div>
     <div class="ackd-foto"></div>
     
      <div class="ackd-info">
         <h3>{{usuario.nombreUsu}}</h3>
         <br>
-        <h3>{{usuario.oficioUsu}}</h3>
+        <div class="oficio">
+            <h3>{{usuario.oficioUsu}}</h3>
+        </div>
     </div>
     
     <div class="ackd-container">

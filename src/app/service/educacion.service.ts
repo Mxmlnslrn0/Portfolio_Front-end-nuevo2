@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { educacion } from '../models/educacion.model';
+import { Educacion } from '../models/educacion.model';
 
 
 @Injectable({
@@ -13,23 +13,23 @@ export class EducacionService {
 
   constructor(private http: HttpClient) { }
 
-  public lista():Observable<educacion[]>{
-    return this.http.get<educacion[]>(this.uri + '/ver');
+  public lista():Observable<Educacion[]>{
+    return this.http.get<Educacion[]>(this.uri + '/verTodo');
   }
 
-  /*public detail(id: Number): Observable<educacion>{
-    return this.http.get<educacion>(this.uri +`detail/${id}`);
-  }*/
+  public porId(id: number): Observable<Educacion>{
+    return this.http.get<Educacion>(this.uri +`/traerPorId/${id}`);
+  }
 
-  public guardar(educacion:educacion):Observable<any>{
+  public guardar(educacion:Educacion):Observable<any>{
     return this.http.post<any>(this.uri + '/nuevo', educacion);
   }
 
-  public editar(id: Number, educacion:educacion):Observable<any>{
-    return this.http.put<any>(this.uri + `editar/${id}`, educacion);
+  public editar(id: number, educacion:Educacion):Observable<any>{
+    return this.http.put<any>(this.uri + `/editar/${id}`, educacion);
   }
 
-  public eliminar(id: Number):Observable<any>{
-    return this.http.delete<any>(this.uri + `/${id}`);
+  public eliminar(id: number):Observable<any>{
+    return this.http.delete<any>(this.uri + `/eliminar/${id}`);
   }
 }

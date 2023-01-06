@@ -1,12 +1,12 @@
-export class educacion{
+export class Educacion {
     
-    idEdu?: Number;
-    nombreEdu: String;
-    carreraEdu: String;
-    //periodoEdu: Number;
-    descripEdu: String;
+    idEdu?: number;
+    nombreEdu: string;
+    carreraEdu: string;
+    //periodoEdu: number;
+    descripEdu: string;
 
-    constructor(nombreEdu: String, carreraEdu: String, /*periodoEdu: Number*/descripEdu: String){
+    constructor(nombreEdu: string, carreraEdu: string, /*periodoEdu: number*/descripEdu: string){
         this.nombreEdu = nombreEdu;
         this.carreraEdu = carreraEdu;
         //this.periodoEdu = periodoEdu;

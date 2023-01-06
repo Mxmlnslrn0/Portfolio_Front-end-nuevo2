@@ -1,0 +1,29 @@
+<div class="modal">
+    <div class="modal_content">
+      <div class="modal_header">
+          <div class="modal_header_titulo"></div>
+          <h4>hola</h4>
+            <button class="but" routerLink="" >x</button>
+      </div>
+      <div class="modal_list">
+        <ul *ngFor="let usuarios of Experiencia">
+          <li><h3>{{usuarios.empleoExp}}</h3></li>
+        </ul>
+      </div>
+       <div class="contenido">
+        <form novalidate #f="ngForm">
+          <div class="form-Group">
+            <label for="puestoExp">Carrera</label>
+            <input type="text" class="form-control" id="puestoExp" name="puestoExp" [(ngModel)]="puestoExp" required>
+          </div>
+          <div class="form-Group">
+            <label for="descripExp">Descripción</label>
+            <input type="text" class="form-control" id="descripExp" name="descripExp" [(ngModel)]="descripExp" required>
+          </div>
+          <button type="submit" class="buto">Agregar cambios</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+

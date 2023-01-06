@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "login-9002b": {
+      "hosting": {
+        "portfolio-maxi": [
+          "login-9002b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "login-9002b"
+  }
+}

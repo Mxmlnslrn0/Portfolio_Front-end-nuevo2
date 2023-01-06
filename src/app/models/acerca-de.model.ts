@@ -1,6 +1,6 @@
 export class usuario{
     
-    idUsu?: Number;
+    idUsu?: number;
     nombreUsu: String;
     oficioUsu: String;
     descripUsu: String;

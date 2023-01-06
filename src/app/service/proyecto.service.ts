@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { educacion } from '../models/educacion.model';
+import { Educacion } from '../models/educacion.model';
 import { proyecto } from '../models/proyecto.model';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class ProyectoService {
   constructor(private http:HttpClient) { }
 
   public lista():Observable<proyecto[]>{
-    return this.http.get<proyecto[]>(this.uri + '/ver');
+    return this.http.get<proyecto[]>(this.uri + '/verTodo');
   }
 
   /*public detail(id: Number): Observable<proyecto>{

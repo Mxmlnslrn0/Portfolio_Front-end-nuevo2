@@ -1,0 +1,22 @@
+    <div class="modal">
+        <div class="modal_content">
+          <div class="modal_header">
+              <div class="modal_header_titulo"></div>
+              <h4>hola</h4>
+                <button class="but" routerLink="" >x</button>
+          </div>
+           <div class="contenido">
+            <form (ngSubmit)="onEdit()" novalidate #f="ngForm">
+              <div class="form-Group">
+                <label for="oficioUsu">Oficio</label>
+                <input type="text" class="form-control" id="oficioUsu" name="oficioUsu" >
+              </div>
+              <div class="form-Group">
+                <label for="descripUsu">Descripción</label>
+                <input type="text" class="form-control" id="descripUsu" name="descripUsu" >
+              </div>
+              <button type="submit" class="buto">Agregar cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>

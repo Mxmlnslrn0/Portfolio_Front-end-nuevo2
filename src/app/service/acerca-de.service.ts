@@ -14,8 +14,13 @@ export class AcercaDeService {
   constructor(private http: HttpClient) { }
 
   public lista():Observable<usuario[]>{
-    return this.http.get<usuario[]>(this.uri + '/ver');
+    return this.http.get<usuario[]>(this.uri + '/verTodo');
   }
+  
+  public porId(id:Number):Observable<usuario>{
+    return this.http.get<usuario>(this.uri + `/traerPorId/${id}`);
+  }
+  
 
   public guardar(Usuario:usuario):Observable<any>{
     return this.http.post<any>(this.uri + '/nuevo', Usuario);
@@ -25,8 +30,8 @@ export class AcercaDeService {
     return this.http.put<any>(this.uri + `/editar/${id}`, Usuario);
   }
 
-  public eliminar(id:String):Observable<any>{
-    return this.http.delete<any>(this.uri + `/${id}`);
+  public eliminar(id:number):Observable<any>{
+    return this.http.delete<any>(this.uri + `/eliminar/${id}`);
   }
 
   public getUsuario():Observable<usuario>{
