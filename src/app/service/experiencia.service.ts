@@ -10,25 +10,25 @@ export class ExperienciaService {
 
   uri = 'http://localhost:8080/experiencia';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
   
   public lista():Observable<experiencia[]>{
     return this.http.get<experiencia[]>(this.uri + '/verTodo');
   }
 
-  /*public detail(id: Number): Observable<experiencia>{
-    return this.http.get<experiencia>(this.uri +`detail/${id}`);
-  }*/
+  public porId(id: number): Observable<experiencia>{
+    return this.http.get<experiencia>(this.uri +`/traerPorId/${id}`);
+  }
 
   public guardar(experiencia:experiencia):Observable<any>{
     return this.http.post<any>(this.uri + '/nuevo', experiencia);
   }
 
-  public editar(id: Number, experiencia:experiencia):Observable<any>{
-    return this.http.put<any>(this.uri + `editar/${id}`, experiencia);
+  public editar(id: number, experiencia:experiencia):Observable<any>{
+    return this.http.put<any>(this.uri + `/editar/${id}`, experiencia);
   }
 
-  public eliminar(id: Number):Observable<any>{
-    return this.http.delete<any>(this.uri + `/${id}`);
+  public eliminar(id: number):Observable<any>{
+    return this.http.delete<any>(this.uri + `/eliminar/${id}`);
   }
 }

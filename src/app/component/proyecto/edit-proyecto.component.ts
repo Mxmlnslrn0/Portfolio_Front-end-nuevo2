@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Educacion } from 'src/app/models/educacion.model';
-import { EducacionService } from 'src/app/service/educacion.service';
+import { proyecto } from 'src/app/models/proyecto.model';
+import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
-  selector: 'app-edit-educacion',
-  templateUrl: './edit-educacion.component.html',
-  styleUrls: ['./edit-educacion.component.css']
+  selector: 'app-edit-proyecto',
+  templateUrl: './edit-proyecto.component.html',
+  styleUrls: ['./edit-proyecto.component.css']
 })
-export class EditEducacionComponent implements OnInit {
-  educ: Educacion = null;
-  constructor(private educService: EducacionService, private acroute: ActivatedRoute, private route: Router) { }
+export class EditProyectoComponent implements OnInit {
+pro: proyecto = null;
+  constructor(private proService: ProyectoService, private acroute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
     const id = this.acroute.snapshot.params['id'];
-    this.educService.porId(id).subscribe(
+    this.proService.porId(id).subscribe(
       data => {
-        this.educ = data;
+        this.pro = data;
       }, err => {
         alert("Error al modificar la educación");
         this.route.navigate(['']);
@@ -26,7 +26,7 @@ export class EditEducacionComponent implements OnInit {
 
   editEducacion(): void {
     const id = this.acroute.snapshot.params['id'];
-    this.educService.editar(id, this.educ).subscribe(
+    this.proService.editar(id, this.pro).subscribe(
       data => {
         this.route.navigate([''])
       }, err => {
@@ -35,4 +35,5 @@ export class EditEducacionComponent implements OnInit {
       }
     )
   }
+
 }

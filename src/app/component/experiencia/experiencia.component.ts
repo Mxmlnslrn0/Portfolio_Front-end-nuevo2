@@ -9,13 +9,27 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-experienciaList:any;
-experiencia: experiencia[] = [];
+
+  experiencia: experiencia[] = [];
   
   constructor(private experienciaService:ExperienciaService) { }
 
   ngOnInit(): void {
-    this.experienciaService.lista().subscribe(data =>{this.experiencia = data;})
+    this.cargarExperiencia();
   }
 
+  cargarExperiencia(): void {
+    this.experienciaService.lista().subscribe(data => { this.experiencia = data });
+  }
+
+  borrarExp(id: number): void {
+    if (id != undefined) {
+      this.experienciaService.eliminar(id).subscribe(
+        data => {
+          this.cargarExperiencia();
+        }, err => {
+          alert("No se pudo eliminar")
+        })
+    }
+  }
 }

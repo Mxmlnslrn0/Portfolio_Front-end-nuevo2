@@ -17,10 +17,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from 'src/environments/environment';
 import { AcercaDeModalComponent } from './component/acerca-de/acerca-de-modal.component';
-import { HeaderModalComponent } from './component/header/header-modal.component';
-import { EducacionModalComponent } from './component/educacion/educacion-modal.component';
-import { ExperienciaModelComponent } from './component/experiencia/experiencia-model.component';
 import { EditEducacionComponent } from './component/educacion/edit-educacion.component';
+import { EditExperienciaComponent } from './component/experiencia/edit-experiencia.component';
+import { CrearEducacionComponent } from './component/educacion/crear-educacion.component';
+import { CrearExperienciaComponent } from './component/experiencia/crear-experiencia.component';
+import { CrearProyectoComponent } from './component/proyecto/crear-proyecto.component';
+import { EditProyectoComponent } from './component/proyecto/edit-proyecto.component';
 
 
 
@@ -39,10 +41,13 @@ import { EditEducacionComponent } from './component/educacion/edit-educacion.com
     HabilidadesComponent,
     ProyectoComponent,
     AcercaDeModalComponent,
-    HeaderModalComponent,
-    EducacionModalComponent,
-    ExperienciaModelComponent,
     EditEducacionComponent,
+    EditExperienciaComponent,
+    CrearEducacionComponent,
+    CrearExperienciaComponent,
+    CrearProyectoComponent,
+    EditProyectoComponent,
+
 
 
    

@@ -9,13 +9,27 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./proyecto.component.css']
 })
 export class ProyectoComponent implements OnInit {
-proyectoList:any;
-proyecto : proyecto[] = [];
+
+  proyecto : proyecto[] = [];
  
   constructor( private proyectoService: ProyectoService) { }
 
   ngOnInit(): void {
-    this.proyectoService.lista().subscribe(data =>{this.proyecto = data;})
+    this.cargarProyecto();
   }
 
+  cargarProyecto(): void {
+    this.proyectoService.lista().subscribe(data => { this.proyecto = data });
+  }
+
+  borrarPro(id: number): void {
+    if (id != undefined) {
+      this.proyectoService.borrar(id).subscribe(
+        data => {
+          this.cargarProyecto();
+        }, err => {
+          alert("No se pudo eliminar")
+        })
+    }
+  }
 }

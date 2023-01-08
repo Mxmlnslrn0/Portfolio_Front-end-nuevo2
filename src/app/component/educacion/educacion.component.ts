@@ -10,25 +10,26 @@ import { EducacionService } from 'src/app/service/educacion.service';
 })
 export class EducacionComponent implements OnInit {
 
-educacion: Educacion[]=[];
+  educacion: Educacion[] = [];
 
-  constructor(private educacionService:EducacionService) { }
+  constructor(private educacionService: EducacionService) { }
 
   ngOnInit(): void {
     this.cargarEducacion();
   }
 
- cargarEducacion(): void{
-    this.educacionService.lista().subscribe(data => { this.educacion=data});
+  cargarEducacion(): void {
+    this.educacionService.lista().subscribe(data => { this.educacion = data });
   }
 
-  borrarEdu(id:number): void{
-    if(id != undefined){
+  borrarEdu(id: number): void {
+    if (id != undefined) {
       this.educacionService.eliminar(id).subscribe(
-        data =>{
+        data => {
           this.cargarEducacion();
-        }, err =>{
+        }, err => {
           alert("No se pudo eliminar")
         })
-    }}
+    }
+  }
 }

@@ -17,20 +17,19 @@ export class AcercaDeService {
     return this.http.get<usuario[]>(this.uri + '/verTodo');
   }
   
-  public porId(id:Number):Observable<usuario>{
+  public porId(id: number):Observable<usuario>{
     return this.http.get<usuario>(this.uri + `/traerPorId/${id}`);
   }
   
-
-  public guardar(Usuario:usuario):Observable<any>{
+  public guardar(Usuario: usuario):Observable<any>{
     return this.http.post<any>(this.uri + '/nuevo', Usuario);
   }
 
-  public cambiar(id: Number, Usuario:usuario):Observable<any>{
+  public cambiar(id: number, Usuario:usuario):Observable<any>{
     return this.http.put<any>(this.uri + `/editar/${id}`, Usuario);
   }
 
-  public eliminar(id:number):Observable<any>{
+  public eliminar(id: number):Observable<any>{
     return this.http.delete<any>(this.uri + `/eliminar/${id}`);
   }
 

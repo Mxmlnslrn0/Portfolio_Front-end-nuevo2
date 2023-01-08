@@ -1,12 +1,12 @@
 export class experiencia{
     
-    idExp?: Number;
-    empleoExp: String;
-    puestoExp: String;
-    //periodoExp: Number;
-    descripExp: String;
+    idExp?: number;
+    empleoExp: string;
+    puestoExp: string;
+    //periodoExp: number;
+    descripExp: string;
 
-    constructor(puestoExp: String, empleoExp: String, /*periodoExp: Number*/descripExp: String){
+    constructor(puestoExp: string, empleoExp: string, /*periodoExp: number*/descripExp: string){
         this.empleoExp = empleoExp;
         this.puestoExp = puestoExp;
         //this.periodoExp = periodoExp;

@@ -1,0 +1,49 @@
+<div class="modal">
+    <div class="modal_content">
+      <div class="modal_header">
+        <div class="modal_header_titulo"></div>
+        <h4>Experiencia Laboral</h4>
+        <button class="but" routerLink="">x</button>
+      </div>
+      
+      <div class="contenido">
+        <form (ngSubmit)="editExperiencia()" novalidate #f="ngForm">
+          <div class="form-Group">
+            <label for="empleoExp">Nombre de la empresa</label>
+            <input
+              type="text"
+              class="formControl"
+              id="empleoExp"
+              name="empleoExp"
+              [(ngModel)]="exp.empleoExp"
+              required=""
+            />
+          </div>
+          <div class="form-Group">
+            <label for="puestoExp">Puesto</label>
+            <input
+              type="text"
+              class="formControl"
+              id="puestoExp"
+              name="puestoExp"
+              [(ngModel)]="exp.puestoExp"
+              required=""
+            />
+          </div>
+          <div class="form-Group">
+            <label for="descripExp">Descripción</label>
+            <input
+              type="text"
+              class="formControl"
+              id="descripExp"
+              name="descripExp"
+              [(ngModel)]="exp.descripExp"
+              required=""
+            />
+          </div>
+          <button type="submit" class="buto">Agregar cambios</button>
+        </form>
+      </div>
+    </div>
+      </div>
+  

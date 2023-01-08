@@ -1,27 +1,34 @@
 <div class="educa">
-    <h1>Educación</h1>
-    <div class="boton">
-        <button type="button" class="btn" routerLink="educacion">
-            +
-          </button>
-    </div>
-    <div class="educación-cards" style="align-self:center;">
-        <ul *ngFor="let educaciones of educacion">
-            <li>
-                <div class="educación-imag">
-                    <img/>
-                </div>
-                <div class="educación-flex">
-                     Nombre: {{educaciones.nombreEdu}} 
-                <div>Carrera: {{educaciones.carreraEdu}}</div>
-                <div>Periodo: </div>
-                <div>Descripción: {{educaciones.descripEdu}}</div>
-                <div>
-                    <button routerLink="editEduc/{{educaciones.idEdu}}">edit</button>
-                    <button (click)="borrarEdu(educaciones.idEdu)">elim</button>  
-                </div>
-                </div>    
-            </li>
-        </ul>
-    </div>
+  <h1>Educación</h1>
+  <div class="boton">
+    <button type="button" class="btn" routerLink="educacion">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+  <div class="educación-cards" style="align-self: center">
+    <ul *ngFor="let educaciones of educacion">
+      <li>
+        <div class="educación-imag">
+          <img />
+        </div>
+        <div class="educación-flex">
+          Nombre: {{ educaciones.nombreEdu }}
+          <div>Carrera: {{ educaciones.carreraEdu }}</div>
+          <div>Periodo:</div>
+          <div>Descripción: {{ educaciones.descripEdu }}</div>
+          <div class="botones">
+            <button
+              class="btnE"
+              [routerLink]="['./editEduc', educaciones.idEdu]"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="btnB" (click)="borrarEdu(educaciones.idEdu)">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -1,39 +1,80 @@
-.xprnc{
-    background-color:whitesmoke;
-    display: flex;
-    justify-content:space-evenly;
-    height: 100vh;
-    width: 100vw;
+.xprnc {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
-
-.xprnc-cards{
-    display: flex;
-    flex-direction: column;
+.boton {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  border: 2px solid transparent;
+  background-color: #0586d8;
+  border-radius: 50%;
+  height: 45px;
 }
 
-.xprnc-flex{
-    display: flex;
-    flex-direction: column;
+.boton button {
+  font-size: 20px;
+  color: #fff;
 }
 
-.imag img{
-    width: 100px;
-    float: left;
-    margin-right: 25px;
+.boton:hover {
+  background-color: #036fb3;
 }
 
-.xprnc h1{
-    font-size: 50px;
-    color: #0586d8;
-    margin-top: 100px;
+.xprnc-cards {
+  display: flex;
+  flex-direction: column;
 }
 
-.xprnc li{
-    list-style: none;
-    text-align: left;
-    color:#0586d8;
-    margin: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
+.xprnc-flex {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.imag img {
+  width: 100px;
+  float: left;
+  margin-right: 25px;
+}
+
+.xprnc h1 {
+  font-size: 50px;
+  color: #0586d8;
+  margin-top: 100px;
+}
+
+.xprnc li {
+  list-style: none;
+  text-align: left;
+  color: #0586d8;
+  margin: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.botones {
+  width: 10px;
+  position: absolute;
+  right: 15%;
+}
+
+.btnE {
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.btnB {
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #ff0000;
 }

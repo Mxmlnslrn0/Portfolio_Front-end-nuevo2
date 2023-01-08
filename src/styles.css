@@ -15,3 +15,88 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    z-index: 999999;
+}
+
+.modal_content{
+    width: 100%;
+    max-width: 500px;
+}
+
+.modal_header{
+    height: 93px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color:#fff;
+    border-top: 4px solid #036fba;
+    border-left: 4px solid #036fba;
+    border-right: 4px solid #036fba;
+    border-radius: 20px 20px 0 0;
+}
+
+.contenido{
+    padding: 32px;
+    background: #fff;
+    border-bottom: 4px solid #036fba;
+    border-left: 4px solid #036fba;
+    border-right: 4px solid #036fba;
+    border-radius: 0 0 20px 20px;
+}
+
+.but{
+    border: 2px solid transparent;
+    background-color: #036fba;
+    color: #fff;
+    font-weight: bold;
+    padding: 0 8px;
+    border-radius: 50%;
+}
+
+.but:hover{
+    transform: scale(1.1);
+    transition: .2s
+}
+
+.buto{
+    background-color: rgb(15, 167, 15);
+    border: 2px solid transparent;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+.buto:hover{
+    background-color: rgb(11, 128, 11) ;
+}
+
+label{
+    font-weight: bold;
+}
+
+input{
+    width: 420px;
+    margin-bottom: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Educacion } from '../models/educacion.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +20,7 @@ export class EducacionService {
     return this.http.get<Educacion>(this.uri +`/traerPorId/${id}`);
   }
 
-  public guardar(educacion:Educacion):Observable<any>{
+  public guardar(educacion: Educacion):Observable<any>{
     return this.http.post<any>(this.uri + '/nuevo', educacion);
   }
 
