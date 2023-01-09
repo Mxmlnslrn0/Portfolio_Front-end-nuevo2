@@ -1,36 +1,32 @@
 <div class="habilidades">
-    <h1>Habilidades</h1>
-    
-    <div class="habi-container">
-        
+  <h1>Habilidades</h1>
+  <div class="boton">
+    <button routerLink="habilidad" type="button" class="btn">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+  <div class="habi-container">
+    <ul *ngFor="let habilidades of habilidad">
+      <li>
         <div class="habi-card">
-            <div class="circle-bar" style="--value: 70"></div>
-            <h2>HTML</h2>
-        </div>  
+          <div
+            class="circle-bar"
+            style="--value:{{ habilidades.porcentajeHab }}"
+          ></div>
+          <h2>{{ habilidades.nombreHab }}</h2>
 
-        <div class="habi-card">
-            <div class="circle-bar" style="--value: 70"></div>
-            <h2>CSS</h2>
-        </div>  
-        
-        <div class="habi-card">
-            <div class="circle-bar" style="--value: 30"></div>
-            <h2>Javascript</h2>
-        </div>  
-
-        <div class="habi-card">
-            <div class="circle-bar" style="--value: 30"></div>
-            <h2>Angular</h2>
-        </div>  
-
-        <div class="habi-card">
-            <div class="circle-bar" style="--value: 30"></div>
-            <h2>JAVA</h2>
-        </div>  
-
-        <div class="habi-card">
-            <div class="circle-bar" style="--value: 50"></div>
-            <h2>Bootstrap</h2>
-        </div>  
-    </div>
+          <div class="botones">
+            <button
+              class="btnE"
+              [routerLink]="['./editHabi', habilidades.idHab]">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="btnB" (click)="borrarHab(habilidades.idHab)">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

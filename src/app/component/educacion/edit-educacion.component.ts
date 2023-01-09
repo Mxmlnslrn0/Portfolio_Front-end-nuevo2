@@ -28,6 +28,7 @@ export class EditEducacionComponent implements OnInit {
     const id = this.acroute.snapshot.params['id'];
     this.educService.editar(id, this.educ).subscribe(
       data => {
+        alert("Educación modificada");
         this.route.navigate([''])
       }, err => {
         alert("Error al modificar la educación");

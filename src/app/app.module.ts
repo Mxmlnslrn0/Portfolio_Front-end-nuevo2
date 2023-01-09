@@ -23,6 +23,8 @@ import { CrearEducacionComponent } from './component/educacion/crear-educacion.c
 import { CrearExperienciaComponent } from './component/experiencia/crear-experiencia.component';
 import { CrearProyectoComponent } from './component/proyecto/crear-proyecto.component';
 import { EditProyectoComponent } from './component/proyecto/edit-proyecto.component';
+import { CrearHabilidadComponent } from './component/habilidades/crear-habilidad.component';
+import { EditHabilidadComponent } from './component/habilidades/edit-habilidad.component';
 
 
 
@@ -47,6 +49,8 @@ import { EditProyectoComponent } from './component/proyecto/edit-proyecto.compon
     CrearExperienciaComponent,
     CrearProyectoComponent,
     EditProyectoComponent,
+    CrearHabilidadComponent,
+    EditHabilidadComponent,
 
 
 

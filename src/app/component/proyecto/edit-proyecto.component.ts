@@ -18,19 +18,19 @@ pro: proyecto = null;
       data => {
         this.pro = data;
       }, err => {
-        alert("Error al modificar la educación");
+        alert("Error al modificar el Proyecto");
         this.route.navigate(['']);
       }
     )
   }
 
-  editEducacion(): void {
+  editProyecto(): void {
     const id = this.acroute.snapshot.params['id'];
     this.proService.editar(id, this.pro).subscribe(
       data => {
         this.route.navigate([''])
       }, err => {
-        alert("Error al modificar la educación");
+        alert("Error al modificar el Proyecto");
         this.route.navigate(['']);
       }
     )

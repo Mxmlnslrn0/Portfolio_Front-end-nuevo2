@@ -9,21 +9,20 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./crear-proyecto.component.css']
 })
 export class CrearProyectoComponent implements OnInit {
-  nombrePro: string = '';
-  //fechaPro: string = '';
-  descripPro: string = '';
-  constructor(private proService : ProyectoService , private router: Router) { }
+ nombrePro: string = '';
+ descripPro: string = '';
+
+  constructor(private proService: ProyectoService, private router: Router) { }
 
   ngOnInit(): void {
   }
   crear(): void {
-    const edu = new proyecto(this.nombrePro, //this.fechaPro, 
-    this.descripPro);
+    const edu = new proyecto(this.nombrePro, this.descripPro);
     this.proService.guardar(edu).subscribe(
-      data =>{
-        alert("Educación añadida");
+      data => {
+        alert("Proyecto añadido");
         this.router.navigate(['']);
-      }, err =>{
+      }, err => {
         alert("Falló");
         this.router.navigate(['']);
       }

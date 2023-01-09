@@ -2,31 +2,30 @@
     <div class="modal_content">
       <div class="modal_header">
         <div class="modal_header_titulo"></div>
-        <h4>Editar Proyectos</h4>
+        <h2>Agregar Experiencia</h2>
         <button class="but" routerLink="">x</button>
       </div>
-      
       <div class="contenido">
-        <form (ngSubmit)="editProyecto()" novalidate #f="ngForm">
-          <div class="form-Group">
-            <label for="nombrePro">Nombre</label>
+        <form (ngSubmit)="crear()" novalidate #f="ngForm">
+          <div class="form_Group">
+            <label for="nombreEdu">Lenguaje de Programacion</label>
             <input
               type="text"
               class="formControl"
-              id="nombrePro"
-              name="nombrePro"
-              [(ngModel)]="pro.nombrePro"
+              id="nombreHab"
+              name="nombreHab"
+              [(ngModel)]="nombreHab"
               required=""
             />
           </div>
           <div class="form-Group">
-            <label for="descripPro">Descripción</label>
+            <label for="porcentajeHab">Porcentaje</label>
             <input
               type="text"
               class="formControl"
-              id="descripPro"
-              name="descripPro"
-              [(ngModel)]="pro.descripPro"
+              id="porcentajeHab"
+              name="porcentajeHab"
+              [(ngModel)]="porcentajeHab"
               required=""
             />
           </div>
@@ -34,5 +33,6 @@
         </form>
       </div>
     </div>
-      </div>
+  </div>
   
+

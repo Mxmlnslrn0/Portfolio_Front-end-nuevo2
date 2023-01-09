@@ -18,7 +18,7 @@ export class CrearEducacionComponent implements OnInit {
   }
 
   crear(): void {
-    const edu = new Educacion(this.nombreEdu, this.carreraEdu, this.descripEdu);
+    const edu = new Educacion(this.nombreEdu, this.carreraEdu,this.descripEdu);
     this.educaService.guardar(edu).subscribe(
       data =>{
         alert("Educación añadida");

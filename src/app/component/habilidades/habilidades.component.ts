@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Habilidades } from 'src/app/models/habilidades.model';
+import { HabilidadesService } from 'src/app/service/habilidades.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -6,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
+  habilidad: Habilidades[] = [];
 
-  constructor() { }
+  constructor(private habiService: HabilidadesService) { }
 
   ngOnInit(): void {
+    this.cargarHabilidad();
   }
 
+  cargarHabilidad(): void {
+    this.habiService.Lista().subscribe(data => { this.habilidad = data });
+  }
+
+  borrarHab(id: number): void {
+    if (id != undefined) {
+      this.habiService.eliminar(id).subscribe(
+        data => {
+          this.cargarHabilidad();
+        }, err => {
+          alert("No se pudo eliminar")
+        })
+    }
+  }
 }

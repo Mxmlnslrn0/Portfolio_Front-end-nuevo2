@@ -80,18 +80,3 @@
     position: absolute;
     right: 15%;
 }
-
-.btnE {
-  padding: 4px 8px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: white;
-  margin-bottom: 30px;
-}
-
-.btnB {
-  padding: 4px 8px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  background-color: #ff0000;
-}
