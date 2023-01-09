@@ -1,6 +1,6 @@
 <div class="habilidades">
   <h1>Habilidades</h1>
-  <div class="boton">
+  <div class="boton" *ngIf="authService.isLoggedIn">
     <button routerLink="habilidad" type="button" class="btn">
       <i class="fa-solid fa-plus"></i>
     </button>
@@ -15,7 +15,7 @@
           ></div>
           <h2>{{ habilidades.nombreHab }}</h2>
 
-          <div class="botones">
+          <div class="botones" *ngIf="authService.isLoggedIn">
             <button
               class="btnE"
               [routerLink]="['./editHabi', habilidades.idHab]">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { proyecto } from 'src/app/models/proyecto.model';
+import { AuthService } from 'src/app/service/auth.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 
 
@@ -12,7 +13,7 @@ export class ProyectoComponent implements OnInit {
 
   proyecto : proyecto[] = [];
  
-  constructor( private proyectoService: ProyectoService) { }
+  constructor( private proyectoService: ProyectoService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.cargarProyecto();

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Habilidades } from 'src/app/models/habilidades.model';
+import { AuthService } from 'src/app/service/auth.service';
 import { HabilidadesService } from 'src/app/service/habilidades.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
 export class HabilidadesComponent implements OnInit {
   habilidad: Habilidades[] = [];
 
-  constructor(private habiService: HabilidadesService) { }
+  constructor(private habiService: HabilidadesService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.cargarHabilidad();

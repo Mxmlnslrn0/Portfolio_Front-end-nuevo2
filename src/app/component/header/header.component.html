@@ -7,7 +7,13 @@
             <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook icon"></i></a>
             <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github icon"></i></a>
         </div>
-        <button class="btn">iniciar Sesion</button>
+        <span *ngIf="!authService.isLoggedIn">
+            <button class="btn" routerLink="login">iniciar Sesion</button>
+        </span>
+        
+        <span *ngIf="authService.isLoggedIn">
+            <button Class="btn" (click)="logout()">Logout</button>
+          </span>
     </div>    
 </div>
 

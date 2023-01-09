@@ -1,6 +1,6 @@
 <div class="xprnc">
   <h1>Experiencia</h1>
-  <div class="boton">
+  <div class="boton" *ngIf="authService.isLoggedIn">
     <button type="button" class="btn" routerLink="experiencia">
       <i class="fa-solid fa-plus"></i>
     </button>
@@ -16,7 +16,7 @@
           <div>Puesto: {{ trabajos.puestoExp }}</div>
           <div>Periodo:</div>
           <div>Descripción: {{ trabajos.descripExp }}</div>
-          <div class="botones">
+          <div class="botones" *ngIf="authService.isLoggedIn">
             <button
               class="btnE"
               [routerLink]="['./editExpe', trabajos.idExp]"
@@ -26,6 +26,7 @@
             <button class="btnB" (click)="borrarExp(trabajos.idExp)">
               <i class="fa-solid fa-trash-can"></i>
             </button>
+
           </div>
         </div>
       </li>

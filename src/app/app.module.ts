@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AngularFireModule } from '@angular/fire/compat'
-
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -15,7 +18,6 @@ import { ProyectoComponent } from './component/proyecto/proyecto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { environment } from 'src/environments/environment';
 import { AcercaDeModalComponent } from './component/acerca-de/acerca-de-modal.component';
 import { EditEducacionComponent } from './component/educacion/edit-educacion.component';
 import { EditExperienciaComponent } from './component/experiencia/edit-experiencia.component';
@@ -25,6 +27,7 @@ import { CrearProyectoComponent } from './component/proyecto/crear-proyecto.comp
 import { EditProyectoComponent } from './component/proyecto/edit-proyecto.component';
 import { CrearHabilidadComponent } from './component/habilidades/crear-habilidad.component';
 import { EditHabilidadComponent } from './component/habilidades/edit-habilidad.component';
+import { LoginComponent } from './component/header/login.component';
 
 
 
@@ -51,6 +54,7 @@ import { EditHabilidadComponent } from './component/habilidades/edit-habilidad.c
     EditProyectoComponent,
     CrearHabilidadComponent,
     EditHabilidadComponent,
+    LoginComponent,
 
 
 
@@ -69,8 +73,11 @@ import { EditHabilidadComponent } from './component/habilidades/edit-habilidad.c
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
     
     
   ],

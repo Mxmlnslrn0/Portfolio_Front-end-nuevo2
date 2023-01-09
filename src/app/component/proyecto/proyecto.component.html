@@ -1,6 +1,6 @@
 <div class="proyecto-container">
   <h1>Proyectos</h1>
-  <div class="boton">
+  <div class="boton" *ngIf="authService.isLoggedIn">
     <button type="button" class="btn" routerLink="proyecto">
       <i class="fa-solid fa-plus"></i>
     </button>
@@ -16,7 +16,7 @@
               <div>Descripción: {{ proyectos.descripPro }}</div>
               <button class="btns"><a href="#">Enlace aquí</a></button>
             </div>
-            <div class="botones">
+            <div class="botones" *ngIf="authService.isLoggedIn">
               <button
                 class="btnE"
                 [routerLink]="['./editPro', proyectos.idPro]">

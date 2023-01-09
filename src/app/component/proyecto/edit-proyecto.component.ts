@@ -28,6 +28,7 @@ pro: proyecto = null;
     const id = this.acroute.snapshot.params['id'];
     this.proService.editar(id, this.pro).subscribe(
       data => {
+        alert("Proyecto modificado")
         this.route.navigate([''])
       }, err => {
         alert("Error al modificar el Proyecto");

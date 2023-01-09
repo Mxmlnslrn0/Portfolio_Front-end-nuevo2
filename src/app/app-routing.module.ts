@@ -9,10 +9,12 @@ import { CrearProyectoComponent } from "./component/proyecto/crear-proyecto.comp
 import { EditProyectoComponent } from "./component/proyecto/edit-proyecto.component";
 import { CrearHabilidadComponent } from "./component/habilidades/crear-habilidad.component";
 import { EditHabilidadComponent } from "./component/habilidades/edit-habilidad.component";
+import { LoginComponent } from "./component/header/login.component";
 
 
 
 const routes: Routes = [
+    { path: 'login', component:LoginComponent},
     { path: 'usuario/:id', component: AcercaDeModalComponent },
     { path: 'educacion', component: CrearEducacionComponent },
     { path: 'editEduc/:id', component: EditEducacionComponent },

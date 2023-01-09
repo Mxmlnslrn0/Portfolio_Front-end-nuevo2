@@ -1,6 +1,6 @@
 <div class="educa">
   <h1>Educación</h1>
-  <div class="boton">
+  <div class="boton"*ngIf="authService.isLoggedIn">
     <button type="button" class="btn" routerLink="educacion">
       <i class="fa-solid fa-plus"></i>
     </button>
@@ -17,7 +17,7 @@
           <!--<div>Periodo inicio: {{educaciones.periodoEduUno}}</div>
           <div>Periodo Final:{{educaciones.periodoEduDos}}</div>-->
           <div>Descripción: {{ educaciones.descripEdu }}</div>
-          <div class="botones">
+          <div class="botones" *ngIf="authService.isLoggedIn">
             <button
               class="btnE"
               [routerLink]="['./editEduc', educaciones.idEdu]"

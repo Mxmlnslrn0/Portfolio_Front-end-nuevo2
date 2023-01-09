@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { experiencia } from 'src/app/models/experiencia.model';
+import { AuthService } from 'src/app/service/auth.service';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
 
@@ -12,7 +13,7 @@ export class ExperienciaComponent implements OnInit {
 
   experiencia: experiencia[] = [];
   
-  constructor(private experienciaService:ExperienciaService) { }
+  constructor(private experienciaService:ExperienciaService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.cargarExperiencia();
