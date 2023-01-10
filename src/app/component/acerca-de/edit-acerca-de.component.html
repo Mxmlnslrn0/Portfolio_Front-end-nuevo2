@@ -1,0 +1,78 @@
+<div class="modal">
+    <div class="modal_content">
+      <div class="modal_header">
+        <div class="modal_header_titulo"></div>
+        <h4>Editar Usuario</h4>
+        <button class="but" routerLink="">x</button>
+      </div>
+      
+      <div class="contenido">
+        <form (ngSubmit)="editUsuario()" novalidate #f="ngForm">
+          <div class="form-Group">
+            <label for="oficioUsu">Oficio</label>
+            <input
+              type="text"
+              class="formControl"
+              id="oficioUsu"
+              name="oficioUsu"
+              [(ngModel)]="usua.oficioUsu"
+              required=""
+            />
+          </div>
+          <div class="form-Group">
+            <label for="descripUsu">Descripción</label>
+            <input
+              type="text"
+              class="formControl"
+              id="descripUsu"
+              name="descripUsu"
+              [(ngModel)]="usua.descripUsu"
+              required=""
+            />
+          </div>
+          <!--<div class="fechas">
+            <div class="form_Group_Bis">
+              <label for="periodoEduUno">Periodo Inicial</label>
+              <input
+                type="date"
+                class="formControl"
+                id="periodoEduUno"
+                name="periodoEduUno"
+                [(ngModel)]="educ.periodoEduUno"
+                required=""
+              />
+            </div>
+            <div class="form_Group_Bis">
+              <label for="periodoEduDos">Periodo Final</label>
+              <input
+                type="date"
+                class="formControl"
+                id="periodoEduDos"
+                name="periodoEduDos"
+                [(ngModel)]="educ.periodoEduDos"
+                required=""
+              />
+            </div>
+          </div>-->
+          <div class="form-Group">
+            <label for="ImgUsu">Imagen de perfil</label>
+            <input
+              type="file"
+              class="formControl"
+              id="ImgUsu"
+              name="ImgUsu"
+              [(ngModel)]="usua.imgUsu"
+              (change)="subirImagen($event)"
+              accept=".jpg, .jpeg, .png"
+              required=""
+            />
+          </div>
+          <div class="image-container">
+            <img [src]="imgService.url" width="100" alt="" srcset="">
+          </div>
+          <button type="submit" class="buto">Agregar cambios</button>
+        </form>
+      </div>
+    </div>
+      </div>
+  

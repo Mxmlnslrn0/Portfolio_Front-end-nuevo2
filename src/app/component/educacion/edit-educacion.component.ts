@@ -9,7 +9,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./edit-educacion.component.css']
 })
 export class EditEducacionComponent implements OnInit {
-  educ: Educacion = null;
+educ: Educacion = new Educacion("", "", "");
   constructor(private educService: EducacionService, private acroute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {

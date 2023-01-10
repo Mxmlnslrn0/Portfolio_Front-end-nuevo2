@@ -9,7 +9,7 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
   styleUrls: ['./edit-habilidad.component.css']
 })
 export class EditHabilidadComponent implements OnInit {
-  habi: Habilidades = null;
+ habi: Habilidades = new Habilidades("", 0);
   constructor(private habiService:HabilidadesService, private acRoute: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {

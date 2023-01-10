@@ -29,9 +29,9 @@ export class AcercaDeService {
     return this.http.put<any>(this.uri + `/editar/${id}`, Usuario);
   }
 
-  public eliminar(id: number):Observable<any>{
+  /*public eliminar(id: number):Observable<any>{
     return this.http.delete<any>(this.uri + `/eliminar/${id}`);
-  }
+  }*/
 
   public getUsuario():Observable<usuario>{
     return this.http.get<usuario>(this.uri + '/traer');

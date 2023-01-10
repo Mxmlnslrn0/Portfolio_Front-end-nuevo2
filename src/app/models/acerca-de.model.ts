@@ -1,14 +1,16 @@
 export class usuario{
     
     idUsu?: number;
-    nombreUsu: String;
-    oficioUsu: String;
-    descripUsu: String;
+    nombreUsu: string;
+    oficioUsu: string;
+    descripUsu: string;
+    imgUsu: string
 
-    constructor(nombreUsu: String, oficioUsu: String, descripUsu: String){
+    constructor(nombreUsu: string, oficioUsu: string, descripUsu: string, imgUsu: string){
         this.nombreUsu = nombreUsu;
         this.oficioUsu = oficioUsu;
         this.descripUsu = descripUsu;
+        this.imgUsu = imgUsu;
     }
 }
 

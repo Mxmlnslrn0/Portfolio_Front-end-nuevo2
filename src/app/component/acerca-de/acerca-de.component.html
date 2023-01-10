@@ -1,5 +1,12 @@
 <div class="ackd">
-    <div class="ackd-foto"></div>
+    <div class="boton"*ngIf="authService.isLoggedIn">
+        <button type="button" class="btn" [routerLink]="['./editUsuario', usuario.idUsu]">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    <div class="ackd-foto">
+        <img src={{usuario.imgUsu}} alt="imagen de perfil">
+    </div>
     
      <div class="ackd-info">
         <h3>{{usuario.nombreUsu}}</h3>

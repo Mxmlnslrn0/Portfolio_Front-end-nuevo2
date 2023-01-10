@@ -18,7 +18,6 @@ import { ProyectoComponent } from './component/proyecto/proyecto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { AcercaDeModalComponent } from './component/acerca-de/acerca-de-modal.component';
 import { EditEducacionComponent } from './component/educacion/edit-educacion.component';
 import { EditExperienciaComponent } from './component/experiencia/edit-experiencia.component';
 import { CrearEducacionComponent } from './component/educacion/crear-educacion.component';
@@ -28,6 +27,8 @@ import { EditProyectoComponent } from './component/proyecto/edit-proyecto.compon
 import { CrearHabilidadComponent } from './component/habilidades/crear-habilidad.component';
 import { EditHabilidadComponent } from './component/habilidades/edit-habilidad.component';
 import { LoginComponent } from './component/header/login.component';
+import { EditAcercaDeComponent } from './component/acerca-de/edit-acerca-de.component';
+
 
 
 
@@ -45,7 +46,6 @@ import { LoginComponent } from './component/header/login.component';
     EducacionComponent,
     HabilidadesComponent,
     ProyectoComponent,
-    AcercaDeModalComponent,
     EditEducacionComponent,
     EditExperienciaComponent,
     CrearEducacionComponent,
@@ -55,6 +55,8 @@ import { LoginComponent } from './component/header/login.component';
     CrearHabilidadComponent,
     EditHabilidadComponent,
     LoginComponent,
+    EditAcercaDeComponent,
+
 
 
 

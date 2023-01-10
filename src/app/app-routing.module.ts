@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router'
-import { AcercaDeModalComponent } from "./component/acerca-de/acerca-de-modal.component";
 import { EditEducacionComponent } from "./component/educacion/edit-educacion.component";
 import { CrearEducacionComponent } from "./component/educacion/crear-educacion.component";
 import { CrearExperienciaComponent } from "./component/experiencia/crear-experiencia.component";
@@ -10,12 +9,12 @@ import { EditProyectoComponent } from "./component/proyecto/edit-proyecto.compon
 import { CrearHabilidadComponent } from "./component/habilidades/crear-habilidad.component";
 import { EditHabilidadComponent } from "./component/habilidades/edit-habilidad.component";
 import { LoginComponent } from "./component/header/login.component";
+import { EditAcercaDeComponent } from "./component/acerca-de/edit-acerca-de.component";
 
 
 
 const routes: Routes = [
     { path: 'login', component:LoginComponent},
-    { path: 'usuario/:id', component: AcercaDeModalComponent },
     { path: 'educacion', component: CrearEducacionComponent },
     { path: 'editEduc/:id', component: EditEducacionComponent },
     { path: 'experiencia', component: CrearExperienciaComponent},
@@ -23,7 +22,8 @@ const routes: Routes = [
     { path: 'proyecto', component: CrearProyectoComponent},
     { path: 'editPro/:id', component: EditProyectoComponent},
     { path: 'habilidad', component: CrearHabilidadComponent},
-    { path: 'editHabi/:id', component:EditHabilidadComponent}
+    { path: 'editHabi/:id', component:EditHabilidadComponent},
+    { path: 'editUsuario/:id', component:EditAcercaDeComponent}
 ]
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
