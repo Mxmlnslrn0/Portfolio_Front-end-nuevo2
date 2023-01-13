@@ -8,7 +8,7 @@ import { proyecto } from '../models/proyecto.model';
 })
 export class ProyectoService {
 
-  uri ='http://localhost:8080/proyecto'
+  uri ='https://portfolio-back-end-drmy.onrender.com/proyecto'
 
   constructor(private http: HttpClient) { }
 

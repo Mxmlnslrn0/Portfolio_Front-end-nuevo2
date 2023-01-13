@@ -8,7 +8,7 @@ import { Educacion } from '../models/educacion.model';
 })
 export class EducacionService {
 
-  uri = 'http://localhost:8080/educacion';
+  uri = 'https://portfolio-back-end-drmy.onrender.com/educacion';
 
   constructor(private http: HttpClient) { }
 

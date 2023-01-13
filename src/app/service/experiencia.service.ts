@@ -8,7 +8,7 @@ import { experiencia } from '../models/experiencia.model';
 })
 export class ExperienciaService {
 
-  uri = 'http://localhost:8080/experiencia';
+  uri = 'https://portfolio-back-end-drmy.onrender.com/experiencia';
 
   constructor(private http: HttpClient) { }
   

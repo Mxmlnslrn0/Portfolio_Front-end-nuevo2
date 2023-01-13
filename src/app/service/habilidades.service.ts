@@ -7,7 +7,7 @@ import { Habilidades } from "../models/habilidades.model";
     providedIn: 'root'
   })
   export class HabilidadesService {
-    uri = 'http://localhost:8080/habilidad';
+    uri = 'https://portfolio-back-end-drmy.onrender.com/habilidad';
 
     constructor(private http: HttpClient) { }
 

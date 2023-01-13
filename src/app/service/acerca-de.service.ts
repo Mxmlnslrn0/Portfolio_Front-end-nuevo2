@@ -9,7 +9,7 @@ import { usuario } from '../models/acerca-de.model';
 })
 export class AcercaDeService {
 
-  uri = 'http://localhost:8080/usuario';
+  uri = 'https://portfolio-back-end-drmy.onrender.com/usuario';
 
   constructor(private http: HttpClient) { }
 
