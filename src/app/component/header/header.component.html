@@ -1,6 +1,13 @@
 <div class="nav">
     <img src= "https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1666227203/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2817%29.png" alt="">
 
+    <nav class="enlaces">
+        <a href="#experiencia">Experiencia</a>
+        <a href="#educacion">Educacion</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+    </nav>
+
     <div class="social">
         <div class="social_cont">
             <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram icon"></i></a>
@@ -8,11 +15,11 @@
             <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github icon"></i></a>
         </div>
         <span *ngIf="!authService.isLoggedIn">
-            <button class="btn" routerLink="login">iniciar Sesion</button>
+            <button class="btn" routerLink="login">Iniciar Sesion</button>
         </span>
         
         <span *ngIf="authService.isLoggedIn">
-            <button Class="btn" (click)="logout()">Logout</button>
+            <button Class="btn" (click)="logout()">Cerrar Sesion</button>
           </span>
     </div>    
 </div>

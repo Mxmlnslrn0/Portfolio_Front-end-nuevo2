@@ -7,72 +7,58 @@
       </div>
       
       <div class="contenido">
-        <form (ngSubmit)="editUsuario()" novalidate #f="ngForm">
-          <div class="form-Group">
+        <form [formGroup]="form" class="form">
+
+          <div *ngIf="!!form.value.id" class="form-group">
+            <label for="idUsu">ID:</label>
+            <input type="text" readonly id="idUsu" formControlName="idUsu">
+          </div>
+      
+          <div class="form-group">
+            <label for="nombreUsu">Nombre</label>
+            <input type="text" id="nombreUsu" formControlName="nombreUsu">
+          </div>
+          <p class="validation" *ngIf="form.get('nombreUsu')?.touched && form.get('nombreUsu')?.errors?.['required']">
+            Nombre es requerido.
+          </p>
+      
+          <div class="form-group">
             <label for="oficioUsu">Oficio</label>
-            <input
-              type="text"
-              class="formControl"
-              id="oficioUsu"
-              name="oficioUsu"
-              [(ngModel)]="usua.oficioUsu"
-              required=""
-            />
+            <input type="text" id="oficioUsu" formControlName="oficioUsu">
           </div>
-          <div class="form-Group">
+          <p class="validation" *ngIf="form.get('oficioUsu')?.touched && form.get('oficioUsu')?.errors?.['required']">
+            carrera es requerido.
+          </p>
+      
+          <div class="form-group">
             <label for="descripUsu">Descripción</label>
-            <input
-              type="text"
-              class="formControl"
-              id="descripUsu"
-              name="descripUsu"
-              [(ngModel)]="usua.descripUsu"
-              required=""
-            />
+            <input type="text" id="descripUsu" formControlName="descripUsu">
           </div>
-          <!--<div class="fechas">
-            <div class="form_Group_Bis">
-              <label for="periodoEduUno">Periodo Inicial</label>
-              <input
-                type="date"
-                class="formControl"
-                id="periodoEduUno"
-                name="periodoEduUno"
-                [(ngModel)]="educ.periodoEduUno"
-                required=""
-              />
+          <p class="validation" *ngIf="form.get('descripUsu')?.touched && form.get('descripUsu')?.errors?.['required']">
+            Descripción es requerido.
+          </p>
+      
+          <div class="form-group">
+            <label for="imgUsu">Seleccionar imagen de perfil</label>
+            <input class="hidden" type="file" (change)="onImagenSeleccionada($event)" #hiddenfileinput>
+      
+            <div class="input-group">
+              <button (click)="hiddenfileinput.click()" type="button" title="importar">
+                <i class="">🖼️</i>
+              </button>
+              <input type="text" formControlName="imgUsu" placeholder="assets/img/ejemplo.webp" #imagenSrc>
             </div>
-            <div class="form_Group_Bis">
-              <label for="periodoEduDos">Periodo Final</label>
-              <input
-                type="date"
-                class="formControl"
-                id="periodoEduDos"
-                name="periodoEduDos"
-                [(ngModel)]="educ.periodoEduDos"
-                required=""
-              />
+            <p class="validation" *ngIf="form.get('imgUsu')?.touched && form.get('imgUsu')?.errors?.['required']">
+              La imagen es requerida.
+            </p>
+            <div class="image-container" *ngIf="imagenSrc.value">
+              <img [src]="imagenSrc.value" width="100" alt="" srcset="">
             </div>
-          </div>-->
-          <div class="form-Group">
-            <label for="ImgUsu">Imagen de perfil</label>
-            <input
-              type="file"
-              class="formControl"
-              id="ImgUsu"
-              name="ImgUsu"
-              [(ngModel)]="usua.imgUsu"
-              (change)="subirImagen($event)"
-              accept=".jpg, .jpeg, .png"
-              required=""
-            />
           </div>
-          <div class="image-container">
-            <img [src]="imgService.url" width="100" alt="" srcset="">
+          <div class="form-buttons">
+            <button class="btn btn-primary" (click)="editar()" >Guardar</button>
           </div>
-          <button type="submit" class="buto">Agregar cambios</button>
         </form>
-      </div>
     </div>
       </div>
   

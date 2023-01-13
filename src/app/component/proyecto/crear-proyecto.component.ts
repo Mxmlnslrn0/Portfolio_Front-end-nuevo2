@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { proyecto } from 'src/app/models/proyecto.model';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
@@ -9,21 +9,29 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./crear-proyecto.component.css']
 })
 export class CrearProyectoComponent implements OnInit {
- nombrePro: string = '';
- descripPro: string = '';
+ form: FormGroup;
 
-  constructor(private proService: ProyectoService, private router: Router) { }
+  constructor(private proService: ProyectoService, 
+              private router: Router,
+              private formBuilder: FormBuilder
+) {
+  this.form = this.formBuilder.group({
+      idPro:['',[Validators.required]],
+      nombrePro:['',[Validators.required]],
+      descripPro:['',[Validators.required]]
+  })
+ }
 
   ngOnInit(): void {
   }
   crear(): void {
-    const edu = new proyecto(this.nombrePro, this.descripPro);
+    const edu = this.form.value;
     this.proService.guardar(edu).subscribe(
-      data => {
+      data =>{
         alert("Proyecto añadido");
         this.router.navigate(['']);
-      }, err => {
-        alert("Falló");
+      }, err =>{
+        alert("Error al crear el Proyecto");
         this.router.navigate(['']);
       }
     )

@@ -1,31 +1,32 @@
 <div class="ackd">
-    <div class="boton"*ngIf="authService.isLoggedIn">
-        <button type="button" class="btn" [routerLink]="['./editUsuario', usuario.idUsu]">
-          <i class="fa-solid fa-plus"></i>
-        </button>
-      </div>
-    <div class="ackd-foto">
-        <img src={{usuario.imgUsu}} alt="imagen de perfil">
+  <div class="boton" *ngIf="authService.isLoggedIn">
+    <button
+      type="button"
+      class="btn"
+      [routerLink]="['./editUsuario', usuario.idUsu]"
+    >
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+  <div class="ackd-foto">
+    <img [src]="usuario.imgUsu" alt="imagen de perfil" />
+  </div>
+
+  <div class="ackd-info">
+    <h3>{{ usuario.nombreUsu }}</h3>
+    <br />
+    <div class="oficio">
+      <h3>{{ usuario.oficioUsu }}</h3>
     </div>
-    
-     <div class="ackd-info">
-        <h3>{{usuario.nombreUsu}}</h3>
-        <br>
-        <div class="oficio">
-            <h3>{{usuario.oficioUsu}}</h3>
-        </div>
+  </div>
+
+  <div class="ackd-container">
+    <div class="ackd-titulo">
+      <h1>Acerca de mi</h1>
     </div>
-    
-    <div class="ackd-container">
-        <div class="ackd-titulo">
-            <h1>Acerca de mi</h1>
-        </div>
-        
-        <div class="ackd-texto">
-            <p>{{usuario.descripUsu}}</p>
-        </div>
+
+    <div class="ackd-texto">
+      <p>{{ usuario.descripUsu }}</p>
     </div>
+  </div>
 </div>
-
-
-

@@ -1,4 +1,4 @@
-<div class="xprnc">
+<div class="xprnc" id="experiencia">
   <h1>Experiencia</h1>
   <div class="boton" *ngIf="authService.isLoggedIn">
     <button type="button" class="btn" routerLink="experiencia">
@@ -9,12 +9,13 @@
     <ul *ngFor="let trabajos of experiencia">
       <li>
         <div class="imag">
-          <img />
+          <img [src]='trabajos.imgExp' alt="imagen educaciones" />
         </div>
         <div class="xprnc-flex">
           Nombre de la Empresa: {{ trabajos.empleoExp }}
           <div>Puesto: {{ trabajos.puestoExp }}</div>
-          <div>Periodo:</div>
+          <div>Periodo inicio:{{trabajos.periodo_unoExp}}</div>
+          <div>Periodo fin:{{trabajos.periodo_dosExp}}</div>
           <div>Descripción: {{ trabajos.descripExp }}</div>
           <div class="botones" *ngIf="authService.isLoggedIn">
             <button

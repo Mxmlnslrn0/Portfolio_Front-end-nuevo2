@@ -2,7 +2,7 @@
   background-color: #0586d8;
   display: flex;
   justify-content: space-evenly;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   position: relative;
 }
@@ -34,8 +34,9 @@
 .educación-flex {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 500px;
 }
+
 
 .educación-imag img {
   width: 100px;
@@ -63,5 +64,3 @@
     position: absolute;
     right: 15%;
 }
-
-

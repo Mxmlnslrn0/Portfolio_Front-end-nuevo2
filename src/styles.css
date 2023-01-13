@@ -121,6 +121,18 @@ form{
     display: flex;
 }
 
-.form_Group_Bis input{
-    width: 205px;
+.form-Group_Bis input{
+    width: 206px;
 }
+
+.form .hidden {
+    display: none;
+  }
+
+  .image-container{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+    border-radius: .5rem;
+  }

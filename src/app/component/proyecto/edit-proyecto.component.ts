@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { proyecto } from 'src/app/models/proyecto.model';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
@@ -9,30 +9,41 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./edit-proyecto.component.css']
 })
 export class EditProyectoComponent implements OnInit {
- pro: proyecto = new proyecto("", "");
-  constructor(private proService: ProyectoService, private acroute: ActivatedRoute, private route: Router) { }
+  form: FormGroup;
 
+  constructor(private proService: ProyectoService, 
+              private router: Router,
+              private formBuilder: FormBuilder,
+              private acroute: ActivatedRoute
+) {
+  this.form = this.formBuilder.group({
+      idPro:['',[Validators.required]],
+      nombrePro:['',[Validators.required]],
+      descripPro:['',[Validators.required]]
+  })
+ }
   ngOnInit(): void {
     const id = this.acroute.snapshot.params['id'];
     this.proService.porId(id).subscribe(
       data => {
-        this.pro = data;
+        this.form.setValue(data)
       }, err => {
         alert("Error al modificar el Proyecto");
-        this.route.navigate(['']);
+        this.router.navigate(['']);
       }
     )
   }
 
-  editProyecto(): void {
+  editar() {
+    const educa = this.form.value;
     const id = this.acroute.snapshot.params['id'];
-    this.proService.editar(id, this.pro).subscribe(
+    this.proService.editar(id, educa).subscribe(
       data => {
-        alert("Proyecto modificado")
-        this.route.navigate([''])
+        alert("Proyecto modificada");
+        this.router.navigate(['']);
       }, err => {
         alert("Error al modificar el Proyecto");
-        this.route.navigate(['']);
+        this.router.navigate(['']);
       }
     )
   }

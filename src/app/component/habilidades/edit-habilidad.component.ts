@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Habilidades } from 'src/app/models/habilidades.model';
 import { HabilidadesService } from 'src/app/service/habilidades.service';
@@ -10,13 +11,25 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
 })
 export class EditHabilidadComponent implements OnInit {
  habi: Habilidades = new Habilidades("", 0);
-  constructor(private habiService:HabilidadesService, private acRoute: ActivatedRoute, private route: Router) { }
+
+ form:FormGroup
+  constructor(private habiService:HabilidadesService, 
+              private acRoute: ActivatedRoute, 
+              private route: Router,
+              private formBuilder: FormBuilder,
+) {
+    this.form = this.formBuilder.group({
+      idHab:['', [Validators.required]],
+      nombreHab: ['',[Validators.required]],
+      porcentajeHab: ['',[Validators.required]]
+    })
+    }
 
   ngOnInit(): void {
     const id = this.acRoute.snapshot.params['id'];
     this.habiService.porId(id).subscribe(
       data => {
-        this.habi = data;
+        this.form.setValue(data)
       }, err => {
         alert("Error al modificar la Habilidad");
         this.route.navigate(['']);
@@ -24,14 +37,15 @@ export class EditHabilidadComponent implements OnInit {
     )
   }
 
-  editHabilidad(): void {
+  editar() {
+    const exp = this.form.value;
     const id = this.acRoute.snapshot.params['id'];
-    this.habiService.editar(id, this.habi).subscribe(
+    this.habiService.editar(id, exp).subscribe(
       data => {
-        alert("Habilidad modificada")
-        this.route.navigate([''])
+        alert("Experiencia modificada");
+        this.route.navigate(['']);
       }, err => {
-        alert("Error al modificar la Habilidad");
+        alert("Error al modificar la Experiencia");
         this.route.navigate(['']);
       }
     )

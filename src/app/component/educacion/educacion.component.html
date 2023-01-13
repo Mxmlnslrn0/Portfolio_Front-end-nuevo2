@@ -1,6 +1,6 @@
-<div class="educa">
+<div class="educa" id="educacion">
   <h1>Educación</h1>
-  <div class="boton"*ngIf="authService.isLoggedIn">
+  <div class="boton" *ngIf="authService.isLoggedIn">
     <button type="button" class="btn" routerLink="educacion">
       <i class="fa-solid fa-plus"></i>
     </button>
@@ -9,14 +9,14 @@
     <ul *ngFor="let educaciones of educacion">
       <li>
         <div class="educación-imag">
-          <img />
+          <img [src]='educaciones.imgEdu' alt="imagen educaciones">
         </div>
         <div class="educación-flex">
           Nombre: {{ educaciones.nombreEdu }}
           <div>Carrera: {{ educaciones.carreraEdu }}</div>
-          <!--<div>Periodo inicio: {{educaciones.periodoEduUno}}</div>
-          <div>Periodo Final:{{educaciones.periodoEduDos}}</div>-->
-          <div>Descripción: {{ educaciones.descripEdu }}</div>
+          <div>periodo inicio: {{ educaciones.periodo_unoEdu }}</div>
+          <div>periodo fin: {{ educaciones.periodo_dosEdu }}</div>
+          <div><p>Descripción: {{ educaciones.descripEdu }}</p></div>
           <div class="botones" *ngIf="authService.isLoggedIn">
             <button
               class="btnE"
