@@ -1,7 +1,5 @@
 .xprnc {
   background-color: whitesmoke;
-  display: flex;
-  justify-content: space-evenly;
   min-height: 100vh;
   width: 100vw;
   position: relative;
@@ -29,6 +27,7 @@
 .xprnc-cards {
   display: flex;
   flex-direction: column;
+  padding-left: 5rem;
 }
 
 .xprnc-flex {
@@ -46,7 +45,7 @@
 .xprnc h1 {
   font-size: 50px;
   color: #0586d8;
-  margin-top: 100px;
+  padding: 50px 50px;
 }
 
 .xprnc li {
