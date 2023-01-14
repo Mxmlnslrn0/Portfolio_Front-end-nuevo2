@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Habilidades } from 'src/app/models/habilidades.model';
 import { HabilidadesService } from 'src/app/service/habilidades.service';
 
 @Component({
@@ -10,20 +9,21 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
   styleUrls: ['./edit-habilidad.component.css']
 })
 export class EditHabilidadComponent implements OnInit {
- habi: Habilidades = new Habilidades("", 0);
 
- form:FormGroup
-  constructor(private habiService:HabilidadesService, 
-              private acRoute: ActivatedRoute, 
-              private route: Router,
-              private formBuilder: FormBuilder,
-) {
+  isEnviado: boolean = false;
+  form: FormGroup
+  
+  constructor(private habiService: HabilidadesService,
+    private acRoute: ActivatedRoute,
+    private route: Router,
+    private formBuilder: FormBuilder,
+  ) {
     this.form = this.formBuilder.group({
-      idHab:['', [Validators.required]],
-      nombreHab: ['',[Validators.required]],
-      porcentajeHab: ['',[Validators.required]]
+      idHab: ['', [Validators.required]],
+      nombreHab: ['', [Validators.required]],
+      porcentajeHab: ['', [Validators.required]]
     })
-    }
+  }
 
   ngOnInit(): void {
     const id = this.acRoute.snapshot.params['id'];
@@ -39,6 +39,7 @@ export class EditHabilidadComponent implements OnInit {
 
   editar() {
     const exp = this.form.value;
+    this.isEnviado = true;
     const id = this.acRoute.snapshot.params['id'];
     this.habiService.editar(id, exp).subscribe(
       data => {

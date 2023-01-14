@@ -12,8 +12,8 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 export class ExperienciaComponent implements OnInit {
 
   experiencia: experiencia[] = [];
-  
-  constructor(private experienciaService:ExperienciaService, public authService: AuthService) { }
+
+  constructor(private experienciaService: ExperienciaService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.cargarExperiencia();

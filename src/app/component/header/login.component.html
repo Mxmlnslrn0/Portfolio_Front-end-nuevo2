@@ -1,39 +1,49 @@
 <div class="modal">
-    <div class="modal_content">
-      <div class="modal_header">
-          <div class="modal_header_titulo"></div>
-          <h2>Login</h2>
-            <button class="but" routerLink="" >x</button>
-      </div>
-       <div class="contenido">
-        <form [formGroup]="form" (ngSubmit)="login()" class="form">
-            <div class="form-group">
-              <label class="form-label" for="email">Email</label>
-              <input type="text" formControlName="email" id="email">
-            </div>
-            <p class="validation" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">
-              Email es requerido.
-            </p>
-            <p class="validation" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']">
-              Email invalido.
-            </p>
-        
-            <div class="form-group">
-              <label class="form-label" for="password">Password</label>
-              <input type="password" formControlName="password" id="password">
-            </div>
-            <p class="validation" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']">
-              Password es requerido.
-            </p>
-            <p class="validation" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['minlength']">
-              Password debe tener mas de 6 caracteres.
-            </p>
-            <div>
-              <button type="submit" class="buto" value="Iniciar">Iniciar
-                </button>
-            </div>
-          </form>
-      </div>
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="modal_header_titulo"></div>
+      <h2>Login</h2>
+      <button class="but" routerLink="">x</button>
+    </div>
+    <div class="contenido">
+      <form [formGroup]="form" (ngSubmit)="login()" class="form">
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input type="text" formControlName="email" id="email" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']"
+        >
+          Email es requerido.
+        </p>
+        <p
+          class="validation"
+          *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']"
+        >
+          Email invalido.
+        </p>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input type="password" formControlName="password" id="password" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']"
+        >
+          Password es requerido.
+        </p>
+        <p
+          class="validation"
+          *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['minlength']"
+        >
+          Password debe tener mas de 6 caracteres.
+        </p>
+        <div>
+          <button type="submit" class="buto" value="Iniciar">Iniciar</button>
+        </div>
+      </form>
     </div>
   </div>
-
+</div>

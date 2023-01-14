@@ -1,39 +1,48 @@
 <div class="modal">
-    <div class="modal_content">
-      <div class="modal_header">
-        <div class="modal_header_titulo"></div>
-        <h2>Agregar Proyectos</h2>
-        <button class="but" routerLink="">x</button>
-      </div>
-      <div class="contenido">
-        <form [formGroup]="form" class="form">
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="modal_header_titulo"></div>
+      <h2>Agregar Proyectos</h2>
+      <button class="but" routerLink="">x</button>
+    </div>
+    <div class="contenido">
+      <form [formGroup]="form" class="form">
+        <div *ngIf="!!form.value.id" class="form-group">
+          <label for="idPro">ID:</label>
+          <input type="text" readonly id="idPro" formControlName="idPro" />
+        </div>
 
-          <div *ngIf="!!form.value.id" class="form-group">
-            <label for="idPro">ID:</label>
-            <input type="text" readonly id="idPro" formControlName="idPro">
-          </div>
-      
-          <div class="form-group">
-            <label for="nombrePro">Nombre</label>
-            <input type="text" id="nombrePro" formControlName="nombrePro">
-          </div>
-          <p class="validation" *ngIf="form.get('nombrePro')?.touched && form.get('nombrePro')?.errors?.['required']">
-            Nombre es requerido.
-          </p>
-      
-          <div class="form-group">
-            <label for="descripPro">Descripción</label>
-            <input type="text" id="descripPro" formControlName="descripPro">
-          </div>
-          <p class="validation" *ngIf="form.get('descripPro')?.touched && form.get('descripPro')?.errors?.['required']">
-            Descripción es requerido.
-          </p>
-          <div class="form-buttons">
-            <button class="btn btn-primary" (click)="crear()" >Guardar</button>
-          </div>
-       </form>
-      </div>
+        <div class="form-group">
+          <label for="nombrePro">Nombre</label>
+          <input type="text" id="nombrePro" formControlName="nombrePro" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('nombrePro')?.touched && form.get('nombrePro')?.errors?.['required']"
+        >
+          Nombre es requerido.
+        </p>
+
+        <div class="form-group">
+          <label for="descripPro">Descripción</label>
+          <input type="text" id="descripPro" formControlName="descripPro" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('descripPro')?.touched && form.get('descripPro')?.errors?.['required']"
+        >
+          Descripción es requerido.
+        </p>
+        <div class="form-buttons">
+          <button
+            class="btn btn-primary"
+            (click)="crear()"
+            [disabled]="isEnviado"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
     </div>
   </div>
-  
-
+</div>

@@ -19,7 +19,8 @@
             <div class="botones" *ngIf="authService.isLoggedIn">
               <button
                 class="btnE"
-                [routerLink]="['./editPro', proyectos.idPro]">
+                [routerLink]="['./editPro', proyectos.idPro]"
+              >
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
               <button class="btnB" (click)="borrarPro(proyectos.idPro)">

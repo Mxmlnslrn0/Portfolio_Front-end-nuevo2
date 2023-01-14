@@ -10,23 +10,26 @@ import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage
   styleUrls: ['./edit-experiencia.component.css']
 })
 export class EditExperienciaComponent implements OnInit {
-form: FormGroup
-  constructor(private expService: ExperienciaService, 
-              private formBuilder: FormBuilder,
-              private acroute: ActivatedRoute, 
-              private route: Router,
-              private storage: Storage
-) {
-  this.form = this.formBuilder.group({
-    idExp:['', [Validators.required]],
-    empleoExp:['', [Validators.required]],
-    puestoExp:['', [Validators.required]],
-    periodo_unoExp:['', [Validators.required]],
-    periodo_dosExp:['', [Validators.required]],
-    descripExp:['', [Validators.required]],
-    imgExp:['', [Validators.required]]
- })
- }
+
+  isEnviado: boolean = false;
+  form: FormGroup
+  
+  constructor(private expService: ExperienciaService,
+    private formBuilder: FormBuilder,
+    private acroute: ActivatedRoute,
+    private route: Router,
+    private storage: Storage
+  ) {
+    this.form = this.formBuilder.group({
+      idExp: ['', [Validators.required]],
+      empleoExp: ['', [Validators.required]],
+      puestoExp: ['', [Validators.required]],
+      periodo_unoExp: ['', [Validators.required]],
+      periodo_dosExp: ['', [Validators.required]],
+      descripExp: ['', [Validators.required]],
+      imgExp: ['', [Validators.required]]
+    })
+  }
 
   ngOnInit(): void {
     const id = this.acroute.snapshot.params['id'];
@@ -42,6 +45,7 @@ form: FormGroup
 
   editar() {
     const exp = this.form.value;
+    this.isEnviado = true;
     const id = this.acroute.snapshot.params['id'];
     this.expService.editar(id, exp).subscribe(
       data => {

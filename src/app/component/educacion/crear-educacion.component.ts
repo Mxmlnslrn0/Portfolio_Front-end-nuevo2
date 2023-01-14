@@ -11,33 +11,36 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CrearEducacionComponent implements OnInit {
 
+  isEnviado: boolean = false;
   form: FormGroup;
-  constructor(private educaService : EducacionService, 
-              private formBuilder: FormBuilder,
-              private router: Router, 
-              private storage:Storage
-) {
-  this.form = this.formBuilder.group({
-    idEdu:['', [Validators.required]],
-    nombreEdu:['', [Validators.required]],
-    carreraEdu:['', [Validators.required]],
-    periodo_unoEdu:['', [Validators.required]],
-    periodo_dosEdu:['', [Validators.required]],
-    descripEdu:['', [Validators.required]],
-    imgEdu:['', [Validators.required]]
-  })
-}
+  
+  constructor(private educaService: EducacionService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private storage: Storage
+  ) {
+    this.form = this.formBuilder.group({
+      idEdu: ['', [Validators.required]],
+      nombreEdu: ['', [Validators.required]],
+      carreraEdu: ['', [Validators.required]],
+      periodo_unoEdu: ['', [Validators.required]],
+      periodo_dosEdu: ['', [Validators.required]],
+      descripEdu: ['', [Validators.required]],
+      imgEdu: ['', [Validators.required]]
+    })
+  }
 
   ngOnInit(): void {
   }
 
   crear(): void {
     const edu = this.form.value;
+    this.isEnviado = true;
     this.educaService.guardar(edu).subscribe(
-      data =>{
+      data => {
         alert("Educación añadida");
         this.router.navigate(['']);
-      }, err =>{
+      }, err => {
         alert("Error al crear la educación");
         this.router.navigate(['']);
       }

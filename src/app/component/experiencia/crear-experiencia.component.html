@@ -1,78 +1,123 @@
 <div class="modal">
-    <div class="modal_content">
-      <div class="modal_header">
-        <div class="modal_header_titulo"></div>
-        <h2>Agregar Experiencia</h2>
-        <button class="but" routerLink="">x</button>
-      </div>
-      <div class="contenido">
-        <form [formGroup]="form" class="form">
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="modal_header_titulo"></div>
+      <h2>Agregar Experiencia</h2>
+      <button class="but" routerLink="">x</button>
+    </div>
+    <div class="contenido">
+      <form [formGroup]="form" class="form">
+        <div *ngIf="!!form.value.id" class="form-group">
+          <label for="idExp">ID:</label>
+          <input type="text" readonly id="idExp" formControlName="idExp" />
+        </div>
 
-          <div *ngIf="!!form.value.id" class="form-group">
-            <label for="idExp">ID:</label>
-            <input type="text" readonly id="idExp" formControlName="idExp">
+        <div class="form-group">
+          <label for="empleoExp">Empleo</label>
+          <input type="text" id="empleoExp" formControlName="empleoExp" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('empleoExp')?.touched && form.get('empleoExp')?.errors?.['required']"
+        >
+          Empleo es requerido.
+        </p>
+
+        <div class="form-group">
+          <label for="puestoExp">Carrera</label>
+          <input type="text" id="puestoExp" formControlName="puestoExp" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('puestoExp')?.touched && form.get('puestoExp')?.errors?.['required']"
+        >
+          puesto es requerido.
+        </p>
+
+        <div class="fechas">
+          <div class="form-group form-Group_Bis">
+            <label for="periodo_unoExp">Periodo inicio</label>
+            <input
+              type="date"
+              id="periodo_unoExp"
+              formControlName="periodo_unoExp"
+            />
           </div>
-      
-          <div class="form-group">
-            <label for="empleoExp">Empleo</label>
-            <input type="text" id="empleoExp" formControlName="empleoExp">
-          </div>
-          <p class="validation" *ngIf="form.get('empleoExp')?.touched && form.get('empleoExp')?.errors?.['required']">
-            Empleo es requerido.
+          <p
+            class="validation"
+            *ngIf="form.get('periodo_unoExp')?.touched && form.get('periodo_unoExp')?.errors?.['required']"
+          >
+            periodo inicio es requerido.
           </p>
-      
-          <div class="form-group">
-            <label for="puestoExp">Carrera</label>
-            <input type="text" id="puestoExp" formControlName="puestoExp">
+
+          <div class="form-group form-Group_Bis">
+            <label for="periodo_dosExp">Periodo fin</label>
+            <input
+              type="date"
+              id="periodo_dosExp"
+              formControlName="periodo_dosExp"
+            />
           </div>
-          <p class="validation" *ngIf="form.get('puestoExp')?.touched && form.get('puestoExp')?.errors?.['required']">
-            puesto es requerido.
+          <p
+            class="validation"
+            *ngIf="form.get('periodo_dosExp')?.touched && form.get('periodo_dosExp')?.errors?.['required']"
+          >
+            periodo fin es requerido.
           </p>
-      
-          <div class="fechas">
-            <div class="form-group form-Group_Bis">
-              <label for="periodo_unoExp">Periodo inicio</label>
-              <input type="date" id="periodo_unoExp" formControlName="periodo_unoExp">
-            </div>
-            <p class="validation" *ngIf="form.get('periodo_unoExp')?.touched && form.get('periodo_unoExp')?.errors?.['required']">
-              periodo inicio es requerido.
-            </p>
-        
-            <div class="form-group form-Group_Bis">
-              <label for="periodo_dosExp">Periodo fin</label>
-              <input type="date" id="periodo_dosExp" formControlName="periodo_dosExp">
-            </div>
-            <p class="validation" *ngIf="form.get('periodo_dosExp')?.touched && form.get('periodo_dosExp')?.errors?.['required']">
-              periodo fin es requerido.
-            </p>
+        </div>
+
+        <div class="form-group">
+          <label for="descripExp">Descripción</label>
+          <input type="text" id="descripExp" formControlName="descripExp" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('descripExp')?.touched && form.get('descripExp')?.errors?.['required']"
+        >
+          Descripción es requerido.
+        </p>
+
+        <div class="form-group">
+          <label for="imgExp">Seleccionar imagen</label>
+          <input
+            class="hidden"
+            type="file"
+            (change)="onImagenSeleccionada($event)"
+            #hiddenfileinput
+          />
+
+          <div class="input-group">
+            <button
+              (click)="hiddenfileinput.click()"
+              type="button"
+              title="importar"
+            >
+              <i class="">🖼️</i>
+            </button>
+            <input
+              type="text"
+              formControlName="imgExp"
+              placeholder="assets/img/ejemplo.webp"
+              #imagenSrc
+            />
           </div>
-      
-          <div class="form-group">
-            <label for="descripExp">Descripción</label>
-            <input type="text" id="descripExp" formControlName="descripExp">
-          </div>
-          <p class="validation" *ngIf="form.get('descripExp')?.touched && form.get('descripExp')?.errors?.['required']">
-            Descripción es requerido.
+          <p
+            class="validation"
+            *ngIf="form.get('imgExp')?.touched && form.get('imgExp')?.errors?.['required']"
+          >
+            La imagen es requerida.
           </p>
-      
-          <div class="form-group">
-            <label for="imgExp">Seleccionar imagen</label>
-            <input class="hidden" type="file" (change)="onImagenSeleccionada($event)" #hiddenfileinput>
-      
-            <div class="input-group">
-              <button (click)="hiddenfileinput.click()" type="button" title="importar">
-                <i class="">🖼️</i>
-              </button>
-              <input type="text" formControlName="imgExp" placeholder="assets/img/ejemplo.webp" #imagenSrc>
-            </div>
-            <p class="validation" *ngIf="form.get('imgExp')?.touched && form.get('imgExp')?.errors?.['required']">
-              La imagen es requerida.
-            </p>
-          </div>
-          <div class="form-buttons">
-            <button class="btn btn-primary" (click)="crear()" >Guardar</button>
-          </div>
-       </form>
-      </div>
+        </div>
+        <div class="form-buttons">
+          <button
+            class="btn btn-primary"
+            (click)="crear()"
+            [disabled]="isEnviado"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
     </div>
   </div>
+</div>

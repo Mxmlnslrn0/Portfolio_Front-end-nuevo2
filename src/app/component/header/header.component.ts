@@ -2,16 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 
-
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title:string = 'portfolio-maxi';
-  myPortfolio:any;
+  title: string = 'portfolio-maxi';
+  myPortfolio: any;
   constructor(public authService: AuthService,
     private router: Router) { }
 

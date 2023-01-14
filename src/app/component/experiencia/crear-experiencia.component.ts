@@ -11,21 +11,23 @@ import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage
 })
 export class CrearExperienciaComponent implements OnInit {
 
+  isEnviado: boolean = false;
   form: FormGroup;
-  constructor(private expeService : ExperienciaService, 
-              private router: Router,
-              private formBuilder: FormBuilder,
-              private storage:Storage
+  
+  constructor(private expeService: ExperienciaService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private storage: Storage
   ) {
     this.form = this.formBuilder.group({
-      idExp:['', [Validators.required]],
-      empleoExp:['', [Validators.required]],
-      puestoExp:['', [Validators.required]],
-      periodo_unoExp:['', [Validators.required]],
-      periodo_dosExp:['', [Validators.required]],
-      descripExp:['', [Validators.required]],
-      imgExp:['', [Validators.required]]
-   })
+      idExp: ['', [Validators.required]],
+      empleoExp: ['', [Validators.required]],
+      puestoExp: ['', [Validators.required]],
+      periodo_unoExp: ['', [Validators.required]],
+      periodo_dosExp: ['', [Validators.required]],
+      descripExp: ['', [Validators.required]],
+      imgExp: ['', [Validators.required]]
+    })
   }
 
   ngOnInit(): void {
@@ -33,17 +35,18 @@ export class CrearExperienciaComponent implements OnInit {
 
   crear(): void {
     const exp = this.form.value;
+    this.isEnviado = true;
     this.expeService.guardar(exp).subscribe(
-      data =>{
+      data => {
         alert("Educación añadida");
         this.router.navigate(['']);
-      }, err =>{
+      }, err => {
         alert("Error al crear la educación");
         this.router.navigate(['']);
       }
     )
   }
-  
+
   async onImagenSeleccionada(e: any) {
     let imagen = e.target.files[0]
     let imgRef = ref(this.storage, `imagen/${imagen.name}`);

@@ -9,6 +9,7 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
+  
   habilidad: Habilidades[] = [];
 
   constructor(private habiService: HabilidadesService, public authService: AuthService) { }

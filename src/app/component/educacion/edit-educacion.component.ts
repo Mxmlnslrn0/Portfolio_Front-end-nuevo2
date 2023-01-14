@@ -13,6 +13,8 @@ export class EditEducacionComponent implements OnInit {
   form: FormGroup;
   id: number = -1;
 
+  isEnviado: boolean = false;
+
   constructor(private educService: EducacionService,
     private formBuilder: FormBuilder,
     private acroute: ActivatedRoute,
@@ -45,6 +47,7 @@ export class EditEducacionComponent implements OnInit {
 
   editar() {
     const educa = this.form.value;
+    this.isEnviado = true;
     const id = this.acroute.snapshot.params['id'];
     this.educService.editar(id, educa).subscribe(
       data => {

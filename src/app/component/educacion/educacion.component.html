@@ -9,14 +9,16 @@
     <ul *ngFor="let educaciones of educacion">
       <li>
         <div class="educación-imag">
-          <img [src]='educaciones.imgEdu' alt="imagen educaciones">
+          <img [src]="educaciones.imgEdu" alt="imagen educaciones" />
         </div>
         <div class="educación-flex">
           Nombre: {{ educaciones.nombreEdu }}
           <div>Carrera: {{ educaciones.carreraEdu }}</div>
           <div>periodo inicio: {{ educaciones.periodo_unoEdu }}</div>
           <div>periodo fin: {{ educaciones.periodo_dosEdu }}</div>
-          <div><p>Descripción: {{ educaciones.descripEdu }}</p></div>
+          <div>
+            <p>Descripción: {{ educaciones.descripEdu }}</p>
+          </div>
           <div class="botones" *ngIf="authService.isLoggedIn">
             <button
               class="btnE"

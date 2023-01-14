@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Habilidades } from 'src/app/models/habilidades.model';
 import { HabilidadesService } from 'src/app/service/habilidades.service';
 
 @Component({
@@ -9,20 +9,33 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
   styleUrls: ['./crear-habilidad.component.css']
 })
 export class CrearHabilidadComponent implements OnInit {
-  nombreHab: string = '';
-  porcentajeHab: number = null;
-  constructor(private habiService : HabilidadesService , private router: Router) { }
+
+  isEnviado: boolean = false;
+  form: FormGroup;
+
+  constructor(private habiService: HabilidadesService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+
+  ) {
+    this.form = this.formBuilder.group({
+      idHab: ['', [Validators.required]],
+      nombreHab: ['', [Validators.required]],
+      porcentajeHab: ['', [Validators.required]]
+    })
+  }
 
   ngOnInit(): void {
   }
 
   crear(): void {
-    const edu = new Habilidades(this.nombreHab,  this.porcentajeHab);
+    const edu = this.form.value;
+    this.isEnviado = true;
     this.habiService.guardar(edu).subscribe(
-      data =>{
+      data => {
         alert("Habilidad añadida");
         this.router.navigate(['']);
-      }, err =>{
+      }, err => {
         alert("Falló");
         this.router.navigate(['']);
       }

@@ -1,38 +1,52 @@
 <div class="modal">
-    <div class="modal_content">
-      <div class="modal_header">
-        <div class="modal_header_titulo"></div>
-        <h2>Agregar Experiencia</h2>
-        <button class="but" routerLink="">x</button>
-      </div>
-      <div class="contenido">
-        <form (ngSubmit)="crear()" novalidate #f="ngForm">
-          <div class="form_Group">
-            <label for="nombreEdu">Lenguaje de Programacion</label>
-            <input
-              type="text"
-              class="formControl"
-              id="nombreHab"
-              name="nombreHab"
-              [(ngModel)]="nombreHab"
-              required=""
-            />
-          </div>
-          <div class="form-Group">
-            <label for="porcentajeHab">Porcentaje</label>
-            <input
-              type="text"
-              class="formControl"
-              id="porcentajeHab"
-              name="porcentajeHab"
-              [(ngModel)]="porcentajeHab"
-              required=""
-            />
-          </div>
-          <button type="submit" class="buto">Agregar cambios</button>
-        </form>
-      </div>
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="modal_header_titulo"></div>
+      <h2>Agregar Experiencia</h2>
+      <button class="but" routerLink="">x</button>
+    </div>
+    <div class="contenido">
+      <form [formGroup]="form" class="form">
+        <div *ngIf="!!form.value.id" class="form-group">
+          <label for="idHab">ID:</label>
+          <input type="text" readonly id="idHab" formControlName="idHab" />
+        </div>
+
+        <div class="form-group">
+          <label for="nombreHab">Nombre del Lenguaje de Programación</label>
+          <input type="text" id="nombreHab" formControlName="nombreHab" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('nombreHab')?.touched && form.get('nombreHab')?.errors?.['required']"
+        >
+          Nombre es requerido.
+        </p>
+
+        <div class="form-group">
+          <label for="porcentajeHab">Descripción</label>
+          <input
+            type="text"
+            id="porcentajeHab"
+            formControlName="porcentajeHab"
+          />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('porcentajeHab')?.touched && form.get('porcentajeHab')?.errors?.['required']"
+        >
+          Descripción es requerido.
+        </p>
+        <div class="form-buttons">
+          <button
+            class="btn btn-primary"
+            (click)="crear()"
+            [disabled]="isEnviado"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
     </div>
   </div>
-  
-
+</div>

@@ -9,19 +9,21 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./edit-proyecto.component.css']
 })
 export class EditProyectoComponent implements OnInit {
+  
   form: FormGroup;
+  isEnviado: boolean = false;
 
-  constructor(private proService: ProyectoService, 
-              private router: Router,
-              private formBuilder: FormBuilder,
-              private acroute: ActivatedRoute
-) {
-  this.form = this.formBuilder.group({
-      idPro:['',[Validators.required]],
-      nombrePro:['',[Validators.required]],
-      descripPro:['',[Validators.required]]
-  })
- }
+  constructor(private proService: ProyectoService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private acroute: ActivatedRoute
+  ) {
+    this.form = this.formBuilder.group({
+      idPro: ['', [Validators.required]],
+      nombrePro: ['', [Validators.required]],
+      descripPro: ['', [Validators.required]]
+    })
+  }
   ngOnInit(): void {
     const id = this.acroute.snapshot.params['id'];
     this.proService.porId(id).subscribe(
@@ -36,6 +38,7 @@ export class EditProyectoComponent implements OnInit {
 
   editar() {
     const educa = this.form.value;
+    this.isEnviado = true;
     const id = this.acroute.snapshot.params['id'];
     this.proService.editar(id, educa).subscribe(
       data => {

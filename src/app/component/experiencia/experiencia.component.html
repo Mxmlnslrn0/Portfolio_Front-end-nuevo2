@@ -9,25 +9,21 @@
     <ul *ngFor="let trabajos of experiencia">
       <li>
         <div class="imag">
-          <img [src]='trabajos.imgExp' alt="imagen educaciones" />
+          <img [src]="trabajos.imgExp" alt="imagen educaciones" />
         </div>
         <div class="xprnc-flex">
           Nombre de la Empresa: {{ trabajos.empleoExp }}
           <div>Puesto: {{ trabajos.puestoExp }}</div>
-          <div>Periodo inicio:{{trabajos.periodo_unoExp}}</div>
-          <div>Periodo fin:{{trabajos.periodo_dosExp}}</div>
+          <div>Periodo inicio:{{ trabajos.periodo_unoExp }}</div>
+          <div>Periodo fin:{{ trabajos.periodo_dosExp }}</div>
           <div>Descripción: {{ trabajos.descripExp }}</div>
           <div class="botones" *ngIf="authService.isLoggedIn">
-            <button
-              class="btnE"
-              [routerLink]="['./editExpe', trabajos.idExp]"
-            >
+            <button class="btnE" [routerLink]="['./editExpe', trabajos.idExp]">
               <i class="fa-solid fa-pen-to-square"></i>
             </button>
             <button class="btnB" (click)="borrarExp(trabajos.idExp)">
               <i class="fa-solid fa-trash-can"></i>
             </button>
-
           </div>
         </div>
       </li>

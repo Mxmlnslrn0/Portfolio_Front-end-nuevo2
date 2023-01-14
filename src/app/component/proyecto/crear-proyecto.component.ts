@@ -9,28 +9,32 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./crear-proyecto.component.css']
 })
 export class CrearProyectoComponent implements OnInit {
- form: FormGroup;
+  
+  form: FormGroup;
+  isEnviado: boolean = false;
 
-  constructor(private proService: ProyectoService, 
-              private router: Router,
-              private formBuilder: FormBuilder
-) {
-  this.form = this.formBuilder.group({
-      idPro:['',[Validators.required]],
-      nombrePro:['',[Validators.required]],
-      descripPro:['',[Validators.required]]
-  })
- }
+  constructor(private proService: ProyectoService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group({
+      idPro: ['', [Validators.required]],
+      nombrePro: ['', [Validators.required]],
+      descripPro: ['', [Validators.required]]
+    })
+  }
 
   ngOnInit(): void {
   }
+
   crear(): void {
     const edu = this.form.value;
+    this.isEnviado = true;
     this.proService.guardar(edu).subscribe(
-      data =>{
+      data => {
         alert("Proyecto añadido");
         this.router.navigate(['']);
-      }, err =>{
+      }, err => {
         alert("Error al crear el Proyecto");
         this.router.navigate(['']);
       }

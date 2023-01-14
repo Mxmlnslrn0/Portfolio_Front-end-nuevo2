@@ -14,12 +14,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private router: Router,
-    private formBuilder: FormBuilder,) { this.form = this.formBuilder.group(
+    private formBuilder: FormBuilder,
+  ) {
+    this.form = this.formBuilder.group(
       {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
       }
-    ) }
+    )
+  }
 
   ngOnInit(): void {
   }
@@ -30,6 +33,6 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.router.navigate(['']);
       })
-      .catch(error => console.error(error));
+      .catch(error => alert("Usuario y/o contraseña erroneo"));
   }
 }

@@ -1,64 +1,95 @@
 <div class="modal">
-    <div class="modal_content">
-      <div class="modal_header">
-        <div class="modal_header_titulo"></div>
-        <h4>Editar Usuario</h4>
-        <button class="but" routerLink="">x</button>
-      </div>
-      
-      <div class="contenido">
-        <form [formGroup]="form" class="form">
-
-          <div *ngIf="!!form.value.id" class="form-group">
-            <label for="idUsu">ID:</label>
-            <input type="text" readonly id="idUsu" formControlName="idUsu">
-          </div>
-      
-          <div class="form-group">
-            <label for="nombreUsu">Nombre</label>
-            <input type="text" id="nombreUsu" formControlName="nombreUsu">
-          </div>
-          <p class="validation" *ngIf="form.get('nombreUsu')?.touched && form.get('nombreUsu')?.errors?.['required']">
-            Nombre es requerido.
-          </p>
-      
-          <div class="form-group">
-            <label for="oficioUsu">Oficio</label>
-            <input type="text" id="oficioUsu" formControlName="oficioUsu">
-          </div>
-          <p class="validation" *ngIf="form.get('oficioUsu')?.touched && form.get('oficioUsu')?.errors?.['required']">
-            carrera es requerido.
-          </p>
-      
-          <div class="form-group">
-            <label for="descripUsu">Descripción</label>
-            <input type="text" id="descripUsu" formControlName="descripUsu">
-          </div>
-          <p class="validation" *ngIf="form.get('descripUsu')?.touched && form.get('descripUsu')?.errors?.['required']">
-            Descripción es requerido.
-          </p>
-      
-          <div class="form-group">
-            <label for="imgUsu">Seleccionar imagen de perfil</label>
-            <input class="hidden" type="file" (change)="onImagenSeleccionada($event)" #hiddenfileinput>
-      
-            <div class="input-group">
-              <button (click)="hiddenfileinput.click()" type="button" title="importar">
-                <i class="">🖼️</i>
-              </button>
-              <input type="text" formControlName="imgUsu" placeholder="assets/img/ejemplo.webp" #imagenSrc>
-            </div>
-            <p class="validation" *ngIf="form.get('imgUsu')?.touched && form.get('imgUsu')?.errors?.['required']">
-              La imagen es requerida.
-            </p>
-            <div class="image-container" *ngIf="imagenSrc.value">
-              <img [src]="imagenSrc.value" width="100" alt="" srcset="">
-            </div>
-          </div>
-          <div class="form-buttons">
-            <button class="btn btn-primary" (click)="editar()" >Guardar</button>
-          </div>
-        </form>
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="modal_header_titulo"></div>
+      <h4>Editar Usuario</h4>
+      <button class="but" routerLink="">x</button>
     </div>
-      </div>
-  
+
+    <div class="contenido">
+      <form [formGroup]="form" class="form">
+        <div *ngIf="!!form.value.id" class="form-group">
+          <label for="idUsu">ID:</label>
+          <input type="text" readonly id="idUsu" formControlName="idUsu" />
+        </div>
+
+        <div class="form-group">
+          <label for="nombreUsu">Nombre</label>
+          <input type="text" id="nombreUsu" formControlName="nombreUsu" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('nombreUsu')?.touched && form.get('nombreUsu')?.errors?.['required']"
+        >
+          Nombre es requerido.
+        </p>
+
+        <div class="form-group">
+          <label for="oficioUsu">Oficio</label>
+          <input type="text" id="oficioUsu" formControlName="oficioUsu" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('oficioUsu')?.touched && form.get('oficioUsu')?.errors?.['required']"
+        >
+          carrera es requerido.
+        </p>
+
+        <div class="form-group">
+          <label for="descripUsu">Descripción</label>
+          <input type="text" id="descripUsu" formControlName="descripUsu" />
+        </div>
+        <p
+          class="validation"
+          *ngIf="form.get('descripUsu')?.touched && form.get('descripUsu')?.errors?.['required']"
+        >
+          Descripción es requerido.
+        </p>
+
+        <div class="form-group">
+          <label for="imgUsu">Seleccionar imagen de perfil</label>
+          <input
+            class="hidden"
+            type="file"
+            (change)="onImagenSeleccionada($event)"
+            #hiddenfileinput
+          />
+
+          <div class="input-group">
+            <button
+              (click)="hiddenfileinput.click()"
+              type="button"
+              title="importar"
+            >
+              <i class="">🖼️</i>
+            </button>
+            <input
+              type="text"
+              formControlName="imgUsu"
+              placeholder="assets/img/ejemplo.webp"
+              #imagenSrc
+            />
+          </div>
+          <p
+            class="validation"
+            *ngIf="form.get('imgUsu')?.touched && form.get('imgUsu')?.errors?.['required']"
+          >
+            La imagen es requerida.
+          </p>
+          <div class="image-container" *ngIf="imagenSrc.value">
+            <img [src]="imagenSrc.value" width="100" alt="" srcset="" />
+          </div>
+        </div>
+        <div class="form-buttons">
+          <button
+            class="btn btn-primary"
+            (click)="editar()"
+            [disabled]="isEnviado"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
