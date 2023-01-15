@@ -28,6 +28,7 @@ import { CrearHabilidadComponent } from './component/habilidades/crear-habilidad
 import { EditHabilidadComponent } from './component/habilidades/edit-habilidad.component';
 import { LoginComponent } from './component/header/login.component';
 import { EditAcercaDeComponent } from './component/acerca-de/edit-acerca-de.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 
@@ -56,6 +57,7 @@ import { EditAcercaDeComponent } from './component/acerca-de/edit-acerca-de.comp
     EditHabilidadComponent,
     LoginComponent,
     EditAcercaDeComponent,
+    FooterComponent,
 
 
 
